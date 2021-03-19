@@ -14,3 +14,4 @@ first i have to make a wireframe of some kind, for both back and front end. i wa
 
 the one o have settled on is the following scheme
 ![alt](scheme.png)
+

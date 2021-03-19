@@ -1,0 +1,54 @@
+:root {
+    --bg1: #011220;
+    --bg2: #011627;
+    --ac1: #ff3366;
+    --ac2: #2ec4b6;
+    --ac3: #f6f7f8;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg1);
+    font-family: 'Nanum Gothic';
+}
+
+.header {
+    border-radius: 30px;
+    ;
+    margin: 10px;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 10px;
+    min-height: 30px;
+    background-color:var(--bg2);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.nav a {
+    color: var(--ac3);
+    text-decoration: none;
+    margin: 10%;
+    font-size: 1.2em;
+}
+
+.nav a:hover {
+    color: var(--ac2);
+    text-decoration: underline;
+}
+
+.nav {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.title {
+    margin: 10px;
+    text-align: center;
+    text-decoration: underline #2ec4b6;
+    color: var(--ac1);
+    font-size: 2em;
+    font-weight: bold
+}
