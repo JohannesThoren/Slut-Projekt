@@ -12,7 +12,5 @@ i will also include a blog part on the site were i can write about stuff and tal
 #### were to begin?
 first i have to make a wireframe of some kind, for both back and front end. i want to go for a simple look, few colors, simple font just overall a simple and plain site. i also have to select a color scheme. 
 
-right now i have two schemes to choose between 
-![alt](sceme%201.png)
-![alt](sceme%202.png)
-![alt](sceme%203.png)
+the one o have settled on is the following scheme
+![alt](scheme.png)
