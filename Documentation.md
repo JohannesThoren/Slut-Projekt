@@ -16,4 +16,4 @@ the one color scheme i have settled on
 ![alt](color%20scheme/scheme.png)
 
 This is a very rough wire frame
-![alt](wireframes/wireframe.jpg)
+![alt](wireframes/fe-wireframe1.jpg)
