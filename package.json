@@ -1,0 +1,19 @@
+{
+  "name": "slut-projekt",
+  "version": "1.0.0",
+  "description": "Detta är slut projektet i weuweb och wesweb",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohannesThoren/Slut-Projekt.git"
+  },
+  "author": "Johannes Thoren",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JohannesThoren/Slut-Projekt/issues"
+  },
+  "homepage": "https://github.com/JohannesThoren/Slut-Projekt#readme"
+}

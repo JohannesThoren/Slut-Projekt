@@ -7,11 +7,13 @@ my plan is to make some kind of portfolio for all of my programing stuff. it wil
 * one part with info about myself.
 * one part were i display all languages i know
 
-i will also include a blog part on the site were i can write about stuff and talk about development.
+if i have time i will also include a blog part on the site were i can write about stuff and talk about development. 
 
 #### were to begin?
 first i have to make a wireframe of some kind, for both back and front end. i want to go for a simple look, few colors, simple font just overall a simple and plain site. i also have to select a color scheme. 
 
-the one o have settled on is the following scheme
-![alt](scheme.png)
+the one color scheme i have settled on
+![alt](color%20scheme/scheme.png)
 
+This is a very rough wire frame
+![alt](wireframes/wireframe.jpg)

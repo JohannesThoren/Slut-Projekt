@@ -1,0 +1,89 @@
+:root {
+    /* --bg1: #011220; */
+
+    --bg1: #f6f7f8;
+
+    --ac1: #ff3366;
+    --ac2: #2ec4b6;
+    --ac3: #011627;
+    
+}
+
+body {
+    color: var(--ac3);
+    margin: 0;
+    background-color: var(--bg1);
+    font-family: 'Nanum Gothic';
+}
+
+.header {
+    border-radius: 30px;
+    margin: 10px;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 10px;
+    min-height: 30px;
+    background-color:var(--bg1);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    box-shadow: 0 2px 8px 0 var(--ac3)
+}
+
+.nav a {
+    color: var(--ac3);
+    text-decoration: none;
+    margin: 10%;
+    font-size: 1.2em;
+    border: 1px solid var(--ac1);
+    padding: 5px;
+    padding-top: 8px;
+    border-radius: 20px;
+}
+
+.nav a:hover {
+    color: var(--ac2);
+    text-decoration: underline;
+}
+
+.nav {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.title-big {
+    color: var(--ac1);
+    margin: 10px;
+    text-align: center;
+    text-decoration: underline #2ec4b6;
+    font-size: 3.5em;
+    font-weight: bold
+}
+
+.title-medium {
+    color: var(--ac1);
+    margin: 10px;
+    text-align: center;
+    text-decoration: underline #2ec4b6;
+    font-size: 2.5em;
+    font-weight: bold
+}
+
+.title-small {
+    color: var(--ac1);
+    margin: 10px;
+    text-align: center;
+    text-decoration: underline #2ec4b6;
+    font-size: 1.5em;
+    font-weight: bold
+}
+
+.content {
+    margin-left: auto;
+    margin-right: auto;
+    
+    width: 80%;
+    min-height: 300px;
+    background-color: var(--bg1);
+}
