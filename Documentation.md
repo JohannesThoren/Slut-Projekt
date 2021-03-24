@@ -12,8 +12,11 @@ if i have time i will also include a blog part on the site were i can write abou
 #### were to begin?
 first i have to make a wireframe of some kind, for both back and front end. i want to go for a simple look, few colors, simple font just overall a simple and plain site. i also have to select a color scheme. 
 
-the one color scheme i have settled on
-![alt](color%20scheme/scheme.png)
+This is the colorscheme that will be used (with some small changes)
+![alt](doc-res/scheme.png)
 
-This is a very rough wire frame
-![alt](wireframes/fe-wireframe1.jpg)
+This is a very rough wire frame 
+![alt](doc-res/wireframe1.jpg)
+
+A small site map (will probably add some more stuff)
+![alt](doc-res/gloomap_1f6d77cd.png)

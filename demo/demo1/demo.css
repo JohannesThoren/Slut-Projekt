@@ -1,8 +1,6 @@
 :root {
-    /* --bg1: #011220; */
 
     --bg1: #f6f7f8;
-
     --ac1: #ff3366;
     --ac2: #2ec4b6;
     --ac3: #011627;
@@ -17,7 +15,7 @@ body {
 }
 
 .header {
-    border-radius: 30px;
+    border-radius: 5px;
     margin: 10px;
     width: 80%;
     margin-right: auto;
@@ -27,7 +25,7 @@ body {
     background-color:var(--bg1);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    box-shadow: 0 2px 8px 0 var(--ac3)
+    border: 1px solid var(--ac3);
 }
 
 .nav a {

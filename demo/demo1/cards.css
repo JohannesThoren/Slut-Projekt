@@ -11,24 +11,24 @@
 .card-big {
     grid-column-end: span 4;
     min-height: 200px;
-    box-shadow: 0 1px 5px 0 var(--ac3);
-    border-radius: 10px;
+    border: 1px solid var(--ac3);
+    border-radius: 5px;
     padding: 5px;
 }
 
 .card-medium {
     grid-column-end: span 2;
     min-height: 200px;
-    box-shadow: 0 1px 5px 0 var(--ac3);
-    border-radius: 10px;
-    padding: 5px;
+    border: 1px solid var(--ac3);
+    border-radius: 5px;
+    padding: 10px;
 }
 
 .card-small {
     min-height: 200px;
-    box-shadow: 0 1px 5px 0 var(--ac3);
-    border-radius: 10px;
-    padding: 5px;
+    border: 1px solid var(--ac3);
+    border-radius: 5px;
+    padding: 10px;
 }
 
 .card-content {
@@ -36,5 +36,5 @@
     padding-right: 20px;
     height: 100%;
     max-height: 400px;
-    overflow: scroll;
+    overflow-y: auto;
 }
