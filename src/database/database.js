@@ -21,3 +21,7 @@
  *   SOFTWARE.
  */
 
+module.exports = (mon) => {
+
+
+}

@@ -1,35 +1,18 @@
-:root {
+body {
+    margin: 0px;
 
-    --bg1: #f6f7f8;
-    --ac1: #ff3366;
-    --ac2: #2ec4b6;
-    --ac3: #011627;
-    
 }
 
-.title-big {
-    color: var(--ac1);
-    margin: 10px;
-    text-align: center;
-    text-decoration: underline #2ec4b6;
-    font-size: 3.5em;
-    font-weight: bold
+.header {
+    border-bottom: 1px solid black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
-.title-medium {
-    color: var(--ac1);
-    margin: 10px;
+.title {
     text-align: center;
-    text-decoration: underline #2ec4b6;
-    font-size: 2.5em;
-    font-weight: bold
 }
 
-.title-small {
-    color: var(--ac1);
-    margin: 10px;
+.navbar  {
     text-align: center;
-    text-decoration: underline #2ec4b6;
-    font-size: 1.5em;
-    font-weight: bold
 }
