@@ -22,6 +22,20 @@
  */
 
 module.exports = (mon) => {
+    mon.connect('mongodb://0.0.0.0:27017/website', {useNewUrlParser: true, useUnifiedTopology: true })
 
+    const BlogPosts = {
+        data: Date,
+        title: String,
+        markdownFile: String,
+        description: String
+    }
 
+    const Projects = {
+        lang: String,
+        projectName: String,
+        markdownDocFile: String,
+        git: String,
+        updated: Date
+    }
 }

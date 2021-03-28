@@ -3,32 +3,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Home</title>
 </head>
 <body>
-    <div class="header">
-        <nav class="navbar">
-            <li class="navbar-item">
-                hej
-            </li>
+    <nav class="navbar">
+        <div class="navbar-brand">       
+            <h1 class="navbar-item title is-primary">Thorén</h1>
+        </div>
 
-        </nav>
+        <a class="navbar-item" href="/"><button class="button is-primary">Home</button></a>
+        <a class="navbar-item" href="/about"><button class="button">About</button></a>
+        <a class="navbar-item" href="/blog"><button class="button">Blog</button></a>
+        <a class="navbar-item" href="/contact"><button class="button">Contact</button></a>
 
-        <h1 class="title">
-            hej
-        </h1>
+        <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link" href="/portfolio">Portfolio</a>
+            <div class="navbar-dropdown is-boxed">
+                <a class="navbar-item" href="/portfolio/rust">Rust</a>
+                <a class="navbar-item" href="/portfolio/node">node.js</a>
+                <a class="navbar-item" href="/portfolio/python">Python</a>
+            </div>
+        </div>
+    </nav>
 
-        <nav class="navbar">
-            <li class="navbar-item">
-                hej
-            </li>
 
-        </nav>
-    </div>
-
-    
 </body>
 </html>

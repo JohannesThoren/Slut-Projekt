@@ -21,24 +21,36 @@
  *   SOFTWARE.
  */
 
- module.exports = (app) => {
-     app.get('/', (req, res) => {
-        res.render('index')
-     })
+module.exports = (app) => {
+   app.get('/', (req, res) => {
+      res.render('index')
+   })
 
-     app.get('/blog', (req, res) => {
-        res.render('blog')
-     })
+   app.get('/blog', (req, res) => {
+      res.render('blog')
+   })
 
-     app.get('/about', (req, res) => {
-        res.render('about')
-     })
+   app.get('/blog/:post', (req, res) => {
+      res.render('post', {post: req.params.post})
+   })
 
-     app.get('/languages', (req, res) => {
-        res.render('languages')
-     })
+   app.get('/about', (req, res) => {
+      res.render('about')
+   })
 
-     app.get('/portfolio', (req, res) => {
-        res.render('portfolio')
-     })
- }
+   app.get('/contact', (req, res) => {
+      res.render('contact')
+   })
+
+   app.get('/portfolio', (req, res) => {
+      res.render('portfolio')
+   })
+
+   app.get('/portfolio/:lang', (req, res) => {
+      res.req(req.params.lang);
+   })
+
+   app.get('/portfolio/:lang/:project', (req, res) => {
+      res.send(`${req.params.lang}, ${req.params.project}`)
+   })
+}
