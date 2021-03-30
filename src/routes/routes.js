@@ -25,10 +25,13 @@
 module.exports = (app) => {
  
     require('./get-routes.js')(app)
-
-    app.listen(8000, (err) => {
+    require('./post-routes.js')(app)
+    require('./put-routes.js')(app)
+    require('./delete-routes.js')(app)
+    
+    app.listen(process.env.WEBPORT, (err) => {
         if (!err) {
-            console.log("serving on port 8000")
+            console.log(`serving on port ${process.env.WEBPORT}`)
         }
         else {
             console.log(err)

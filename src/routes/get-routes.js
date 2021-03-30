@@ -47,7 +47,7 @@ module.exports = (app) => {
    })
 
    app.get('/portfolio/:lang', (req, res) => {
-      res.req(req.params.lang);
+      res.send(req.params.lang);
    })
 
    app.get('/portfolio/:lang/:project', (req, res) => {
