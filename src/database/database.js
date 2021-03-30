@@ -21,8 +21,6 @@
  *   SOFTWARE.
  */
 
-const { mongo } = require("mongoose")
-
 module.exports = (mon) => {
     mon.connect(process.env.DBADDRESS, {useNewUrlParser: true, useUnifiedTopology: true })
 
@@ -42,8 +40,16 @@ module.exports = (mon) => {
         updated: Date
     })
 
+    // TODO check with niklas how to use these variables
+    // outside this file.... it is getting annoying as fuck.
     let blogPost = new mon.model("blogPost", BlogPost)
     let project = new mon.model("project", Project)
 
-    console.log(blogPost, project)
+    blogPost.create({
+        data: Date.now(),
+        title: "This is just a small test!",
+        markdownFile: "test.md",
+        description: "well this is a small description, so yeah.....!"
+    })
 }
+

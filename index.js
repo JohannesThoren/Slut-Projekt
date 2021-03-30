@@ -35,9 +35,6 @@ app.use(exp.static("resources"))
 app.use(mo('_method'))
 
 require('./src/routes/routes.js')(app)
-require('./src/database/database.js')(mon)
+let db = require('./src/database/database.js')(mon)
 
-let {project} = require('./src/database/database.js')
-let {blogPost} = require('./src/database/database.js')
-
-console.log(blogPost, project)
+console.log(db)
