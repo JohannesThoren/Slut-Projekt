@@ -23,12 +23,21 @@
 
 const exp = require('express')
 const mon = require('mongoose')
-const mo = require('method-override')
+const mo = require('method-override')   
 const app = exp();
+const marked = require('marked')
+
+require('dotenv').config()
 
 app.set('view engine', 'ejs')
 app.use(exp.urlencoded({extended: true}))
 app.use(exp.static("resources"))
 app.use(mo('_method'))
 
-let routes = require('./src/routes/routes.js')(app)
+require('./src/routes/routes.js')(app)
+require('./src/database/database.js')(mon)
+
+let {project} = require('./src/database/database.js')
+let {blogPost} = require('./src/database/database.js')
+
+console.log(blogPost, project)

@@ -25,9 +25,9 @@
 module.exports = (app) => {
  
     require('./get-routes.js')(app)
-    require('./post-routes.js')(app)
-    require('./put-routes.js')(app)
-    require('./delete-routes.js')(app)
+    // require('./post-routes.js')(app)
+    // require('./put-routes.js')(app)
+    // require('./delete-routes.js')(app)
     
     app.listen(process.env.WEBPORT, (err) => {
         if (!err) {

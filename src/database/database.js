@@ -21,24 +21,29 @@
  *   SOFTWARE.
  */
 
+const { mongo } = require("mongoose")
+
 module.exports = (mon) => {
     mon.connect(process.env.DBADDRESS, {useNewUrlParser: true, useUnifiedTopology: true })
 
-    const BlogPosts = {
+    const BlogPost = mon.Schema({
         data: Date,
         title: String,
         markdownFile: String,
         description: String
-    }
+    })
 
-    const Projects = {
+    const Project = mon.Schema({
         lang: String,
         projectName: String,
         description: String,
         markdownFile: String,
         git: String,
         updated: Date
-    }
+    })
 
+    let blogPost = new mon.model("blogPost", BlogPost)
+    let project = new mon.model("project", Project)
 
+    console.log(blogPost, project)
 }
