@@ -63,18 +63,21 @@
     <div id="content" class="row row-cols-1 row-cols-md-3 g-4">
         <% for (post in posts) { %>
             <div class="col">
-                <div class="card">    
+                <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title"><%=posts[post].title%></h4>
+                        <h4 class="card-title">
+                            <%=posts[post].title%>
+                        </h4>
                         <p class="card-text">
                             <%= posts[post].description %>
                         </p>
-                
-                    </div>
-                    
-                    <div class="card-footer">
                         <a href="blog/<%= posts[post]._id %>" class="btn btn-primary">Read More</a>
-                        <span class="small-text text-muted"><%=posts[post].date%></span>
+                    </div>
+
+                    <div class="card-footer">
+                        <span class="small-text text-muted">
+                            <%=posts[post].date%>
+                        </span>
                     </div>
                 </div>
             </div>

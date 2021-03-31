@@ -37,12 +37,21 @@ app.use(mo('_method'))
 
 
 
-blogPost.create({
-    date: Date.now(),
-    title: "Test yay",
-    markdown: "# hejsan",
-    description: "ett test"
-})
+// blogPost.create({
+//     date: Date.now(),
+//     title: "Test yay",
+//     markdown: "# hejsan",
+//     description: "ett test"
+// })
+
+// project.create({
+//     tags: ["html", "css", "js"],
+//     projectName: "test project",
+//     description: "this is a small test",
+//     markdown: "# hej",
+//     git: "none",
+//     updated: Date.now()
+// })
 
 require('./src/routes/routes.js')(app, blogPost, project)
 

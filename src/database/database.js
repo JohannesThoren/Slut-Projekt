@@ -34,7 +34,7 @@ const BlogPost = new mon.Schema({
 })
 
 const Project = new mon.Schema({
-    lang: String,
+    tags: [String],
     projectName: String,
     description: String,
     markdown: String,
@@ -42,9 +42,7 @@ const Project = new mon.Schema({
     updated: Date
 });
 
-// TODO check with niklas how to use these variables
-// outside this file.... it is getting annoying as fuck.
-
+// this exports the mongod models
 const blogPost = mon.model("blogPost", BlogPost)
 const project = mon.model("project", Project)
 

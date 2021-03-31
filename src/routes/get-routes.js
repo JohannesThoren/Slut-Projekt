@@ -40,8 +40,10 @@ module.exports = (app, blogPost, project) => {
    })
 
    app.get('/blog/:post', (req, res) => {
-      blogPost.findById(req.params.post, (err, post) => {
-         res.render('post', {markdown: marked(post.markdown)})
+      blogPost.findById(req.params.post, async (err, post) => {
+         let md = await marked(post.markdown).toString()
+
+         res.render('post', {markdown: md})
       })
    })
 
@@ -54,14 +56,42 @@ module.exports = (app, blogPost, project) => {
    })
 
    app.get('/portfolio', (req, res) => {
-      res.render('portfolio')
+      project.find({}, (err, projects) =>  {
+         res.render('portfolio', {projects: projects})
+      })
    })
 
-   app.get('/portfolio/:lang', (req, res) => {
-      res.send(req.params.lang);
+   app.get('/portfolio/:tags', (req, res) => {
+      project.find({tags: req.params.tags}, (err, projects) =>  {
+         res.render('portfolio', {projects: projects})
+      })
    })
 
    app.get('/portfolio/:lang/:project', (req, res) => {
       res.send(`${req.params.lang}, ${req.params.project}`)
+   })
+
+   app.get('/admin/:token', (req, res) => {
+      res.redirect('/')
+   })
+
+   app.get('/admin/:token/posts', (req, res) => {
+      res.redirect('/')
+   })
+
+   app.get('/admin/:token/posts/new', (req, res) => {
+      res.redirect('/')
+   })
+
+   app.get('/admin/:token/posts/:id/edit', (req, res) => {
+      res.redirect('/')
+   })
+
+   app.get('/admin/:token/posts/:id/delete', (req, res) => {
+      res.redirect('/')
+   })
+
+   app.get('/admin', (req, res) => {
+      res.redirect('/')
    })
 }
