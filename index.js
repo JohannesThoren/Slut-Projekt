@@ -22,19 +22,42 @@
  */
 
 const exp = require('express')
-const mon = require('mongoose')
 const mo = require('method-override')   
 const app = exp();
 const marked = require('marked')
 
 require('dotenv').config()
 
+const {blogPost, project} = require('./src/database/database');
+ 
 app.set('view engine', 'ejs')
 app.use(exp.urlencoded({extended: true}))
 app.use(exp.static("resources"))
 app.use(mo('_method'))
 
 require('./src/routes/routes.js')(app)
-let db = require('./src/database/database.js')(mon)
+// require('./src/database/database.js')(mon)
 
-console.log(db)
+
+// if (mon.connect(process.env.DBADDRESS, {useNewUrlParser: true, useUnifiedTopology: true })) {
+//     console.log(`Connected To Database! (${process.env.DBADDRESS})`)
+// }
+
+// const BlogPost = new mon.Schema({
+//     data: Date,
+//     title: String,
+//     markdownFile: String,
+//     description: String
+// })
+
+// const Project = new mon.Schema({
+//     lang: String,
+//     projectName: String,
+//     description: String,
+//     markdownFile: String,
+//     git: String,
+//     updated: Date
+// })
+
+// let blogPost = mon.model("blogPost", BlogPost)
+// let project = mon.model("project", Project)

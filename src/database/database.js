@@ -20,36 +20,33 @@
  *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *   SOFTWARE.
  */
+const mon = require('mongoose')
 
-module.exports = (mon) => {
-    mon.connect(process.env.DBADDRESS, {useNewUrlParser: true, useUnifiedTopology: true })
-
-    const BlogPost = mon.Schema({
-        data: Date,
-        title: String,
-        markdownFile: String,
-        description: String
-    })
-
-    const Project = mon.Schema({
-        lang: String,
-        projectName: String,
-        description: String,
-        markdownFile: String,
-        git: String,
-        updated: Date
-    })
-
-    // TODO check with niklas how to use these variables
-    // outside this file.... it is getting annoying as fuck.
-    let blogPost = new mon.model("blogPost", BlogPost)
-    let project = new mon.model("project", Project)
-
-    blogPost.create({
-        data: Date.now(),
-        title: "This is just a small test!",
-        markdownFile: "test.md",
-        description: "well this is a small description, so yeah.....!"
-    })
+if (mon.connect(process.env.DBADDRESS, {useNewUrlParser: true, useUnifiedTopology: true })) {
+    console.log("Connected To Database!")
 }
+
+const BlogPost = new mon.Schema({
+    data: Date,
+    title: String,
+    markdownFile: String,
+    description: String
+})
+
+const Project = new mon.Schema({
+    lang: String,
+    projectName: String,
+    description: String,
+    markdownFile: String,
+    git: String,
+    updated: Date
+});
+
+// TODO check with niklas how to use these variables
+// outside this file.... it is getting annoying as fuck.
+
+const blogPost = mon.model("blogPost", BlogPost)
+const project = mon.model("project", Project)
+
+module.exports = {blogPost, project}
 
