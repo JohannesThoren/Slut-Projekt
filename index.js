@@ -35,29 +35,22 @@ app.use(exp.urlencoded({extended: true}))
 app.use(exp.static("resources"))
 app.use(mo('_method'))
 
-require('./src/routes/routes.js')(app)
-// require('./src/database/database.js')(mon)
 
 
-// if (mon.connect(process.env.DBADDRESS, {useNewUrlParser: true, useUnifiedTopology: true })) {
-//     console.log(`Connected To Database! (${process.env.DBADDRESS})`)
-// }
+blogPost.create({
+    date: Date.now(),
+    title: "Test yay",
+    markdown: "# hejsan",
+    description: "ett test"
+})
 
-// const BlogPost = new mon.Schema({
-//     data: Date,
-//     title: String,
-//     markdownFile: String,
-//     description: String
-// })
+require('./src/routes/routes.js')(app, blogPost, project)
 
-// const Project = new mon.Schema({
-//     lang: String,
-//     projectName: String,
-//     description: String,
-//     markdownFile: String,
-//     git: String,
-//     updated: Date
-// })
-
-// let blogPost = mon.model("blogPost", BlogPost)
-// let project = mon.model("project", Project)
+app.listen(process.env.WEBPORT, (err) => {
+    if (!err) {
+        console.log(`serving on port ${process.env.WEBPORT}`)
+    }
+    else {
+        console.log(err)
+    }
+})

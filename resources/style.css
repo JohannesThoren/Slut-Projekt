@@ -3,7 +3,6 @@ body {
 }
 
 #content {
-    color: white;
     width: 80%;
     
     margin: 100px;
@@ -11,4 +10,12 @@ body {
     margin-right: auto;
     min-height: 500px;
 
+}
+
+.card-footer {
+    text-align: center
+}
+
+.small-text {
+    font-size: 0.6em;
 }

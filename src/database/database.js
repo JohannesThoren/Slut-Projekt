@@ -27,9 +27,9 @@ if (mon.connect(process.env.DBADDRESS, {useNewUrlParser: true, useUnifiedTopolog
 }
 
 const BlogPost = new mon.Schema({
-    data: Date,
+    date: Date,
     title: String,
-    markdownFile: String,
+    markdown: String,
     description: String
 })
 
@@ -37,7 +37,7 @@ const Project = new mon.Schema({
     lang: String,
     projectName: String,
     description: String,
-    markdownFile: String,
+    markdown: String,
     git: String,
     updated: Date
 });

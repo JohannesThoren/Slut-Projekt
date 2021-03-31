@@ -21,17 +21,28 @@
  *   SOFTWARE.
  */
 
-module.exports = (app) => {
+const marked = require("marked")
+
+module.exports = (app, blogPost, project) => {
    app.get('/', (req, res) => {
       res.render('index')
    })
 
    app.get('/blog', (req, res) => {
-      res.render('blog')
+
+      // get all blogPosts and render them on the site as cards
+      blogPost.find({}, (err, posts) => {
+         if (!err) 
+            res.render('blog', {posts: posts})
+         else
+            res.send("error 404, site not found")
+      })
    })
 
    app.get('/blog/:post', (req, res) => {
-      res.render('post', {post: req.params.post})
+      blogPost.findById(req.params.post, (err, post) => {
+         res.render('post', {markdown: marked(post.markdown)})
+      })
    })
 
    app.get('/about', (req, res) => {
