@@ -70,28 +70,4 @@ module.exports = (app, blogPost, project) => {
    app.get('/portfolio/:lang/:project', (req, res) => {
       res.send(`${req.params.lang}, ${req.params.project}`)
    })
-
-   app.get('/admin/:token', (req, res) => {
-      res.redirect('/')
-   })
-
-   app.get('/admin/:token/posts', (req, res) => {
-      res.redirect('/')
-   })
-
-   app.get('/admin/:token/posts/new', (req, res) => {
-      res.redirect('/')
-   })
-
-   app.get('/admin/:token/posts/:id/edit', (req, res) => {
-      res.redirect('/')
-   })
-
-   app.get('/admin/:token/posts/:id/delete', (req, res) => {
-      res.redirect('/')
-   })
-
-   app.get('/admin', (req, res) => {
-      res.redirect('/')
-   })
 }
