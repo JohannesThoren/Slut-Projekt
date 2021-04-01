@@ -20,10 +20,27 @@
  *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *   SOFTWARE.
  */
-
-module.exports = (app) => {
+ 
+module.exports = (app, blogPost, project) => {
     app.get('/admin/:token', (req, res) => {
-        res.redirect('/')
+        if (req.params.token == process.env.ADMIN_TOKEN) {
+  
+            blogPost.find({}, (err, posts) => {
+                if (!err) {
+                    project.find({}, (err, projects) => {
+                        if (!err)
+                            res.render('admin/admin', { token: req.params.token, posts: posts, projects: projects })
+                        else
+                            console.log(err)
+                    })
+                }
+                else 
+                    console.log(err)
+            })     
+        }
+        else 
+            res.redirect('/')
+        
     })
 
     app.get('/admin/:token/posts', (req, res) => {

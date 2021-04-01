@@ -1,0 +1,22 @@
+.panel {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+.scroll-panel {
+    overflow-y: scroll;
+    max-height: 800px;
+}
+    
+
+.card {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid black
+}
+
+#flex {
+    display: flex; 
+}

@@ -22,9 +22,8 @@
  */
 const mon = require('mongoose')
 
-if (mon.connect(process.env.DBADDRESS, {useNewUrlParser: true, useUnifiedTopology: true })) {
-    console.log("Connected To Database!")
-}
+mon.connect(process.env.DBADDRESS, {useNewUrlParser: true, useUnifiedTopology: true })
+
 
 const BlogPost = new mon.Schema({
     date: Date,

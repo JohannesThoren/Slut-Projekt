@@ -39,7 +39,7 @@ app.use(mo('_method'))
 
 // blogPost.create({
 //     date: Date.now(),
-//     title: "Test yay",
+//     title: "Test",
 //     markdown: "# hejsan",
 //     description: "ett test"
 // })
