@@ -1,4 +1,4 @@
-/*
+ /*
  *   Copyright (c) 2021 Johannes Thorén
  *   All rights reserved.
 
@@ -21,13 +21,30 @@
  *   SOFTWARE.
  */
 
- 
-module.exports = (app, blogPost, project, mo) => {
- 
-    require('./get-routes.js')(app, blogPost, project)
-    require('./admin-get-routes')(app, blogPost, project)       // this is the get routes for all admin stuff like editing and removing stuff
-    require('./post-routes.js')(app, blogPost, project)
-    require('./put-routes.js')(app, blogPost, project)
-    require('./delete-routes.js')(app, blogPost, project, mo)
-    
+#content {
+    width:50%
+}
+
+pre {
+    border-left: 10px solid lightgray;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    background-color: #eee;
+}
+
+code {
+    background-color: #eee;
+    border-radius: 3px;
+    font-family: courier, monospace;
+    padding: 1px;
+}
+
+img {
+    max-width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+    #content {width: 98%;}
+
+
 }

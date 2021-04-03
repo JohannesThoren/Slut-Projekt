@@ -39,3 +39,9 @@ body {
 .small-text {
     font-size: 0.6em;
 }
+
+@media screen and (max-width: 1500px) {
+    img {
+        max-width: 400px
+    }
+}

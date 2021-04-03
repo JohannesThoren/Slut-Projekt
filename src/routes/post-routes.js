@@ -31,7 +31,7 @@ module.exports = (app, blogPost, project) => {
             description: req.body.description
         })
 
-        res.redirect('/admin/:token')
+        res.redirect('/admin/'+req.params.token)
     })
 
 }

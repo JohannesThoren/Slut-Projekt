@@ -21,3 +21,15 @@
  *   SOFTWARE.
  */
 
+module.exports = (app, blogPost, project) => {
+    app.put('/blog/:token/:id', async (req, res) => {
+        await blogPost.findByIdAndUpdate(req.params.id, {
+            date: Date.now(),
+            title: req.body.title,
+            markdown: req.body.markdown,
+            description: req.body.description 
+        })
+
+        res.redirect('/admin/'+req.params.token)
+    })
+}

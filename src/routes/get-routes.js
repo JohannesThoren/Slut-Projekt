@@ -39,8 +39,8 @@ module.exports = (app, blogPost, project) => {
       })
    })
 
-   app.get('/blog/:post', (req, res) => {
-      blogPost.findById(req.params.post, async (err, post) => {
+   app.get('/blog/:id', (req, res) => {
+      blogPost.findById(req.params.id, async (err, post) => {
          let md = await marked(post.markdown).toString()
 
          res.render('post', {markdown: md})
