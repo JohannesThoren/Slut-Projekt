@@ -22,12 +22,12 @@
  */
 
  
-module.exports = (app, blogPost, project) => {
+module.exports = (app, blogPost, project, mo) => {
  
     require('./get-routes.js')(app, blogPost, project)
     require('./admin-get-routes')(app, blogPost, project)       // this is the get routes for all admin stuff like editing and removing stuff
-    // require('./post-routes.js')(app)
+    require('./post-routes.js')(app, blogPost, project)
     // require('./put-routes.js')(app)
-    // require('./delete-routes.js')(app)
+    require('./delete-routes.js')(app, blogPost, project, mo)
     
 }

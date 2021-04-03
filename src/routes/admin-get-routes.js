@@ -43,20 +43,21 @@ module.exports = (app, blogPost, project) => {
         
     })
 
-    app.get('/admin/:token/posts', (req, res) => {
-        res.redirect('/')
-    })
-
     app.get('/admin/:token/posts/new', (req, res) => {
-        res.redirect('/')
+        res.render('admin/new_blog_post', {token: req.params.token})
     })
 
     app.get('/admin/:token/posts/:id/edit', (req, res) => {
-        res.redirect('/')
+       blogPost.findById(req.params.id, (err, post) => {
+            if(!err)
+                res.render('admin/edit_blog_post', {token: req.params.token, post: post})
+            else
+                console.log(err)
+        })
     })
 
     app.get('/admin/:token/posts/:id/delete', (req, res) => {
-        res.redirect('/')
+        res.render('admin/delete_blog_post', {token: req.params.token, post_id: req.params.id})
     })
 
     app.get('/admin', (req, res) => {

@@ -21,3 +21,13 @@
  *   SOFTWARE.
  */
 
+module.exports = (app, blogPost, porject, mo) => {
+    app.delete('/blog/:token/:id', (req, res) => {
+        if(req.params.token == process.env.ADMIN_TOKEN) {
+            blogPost.findByIdAndDelete(req.params.id, (err, doc) => {
+                if(err) console.log(err)
+                else res.redirect('/admin/'+req.params.token);
+            })
+        }
+    })
+}

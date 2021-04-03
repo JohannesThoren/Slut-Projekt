@@ -53,7 +53,7 @@ app.use(mo('_method'))
 //     updated: Date.now()
 // })
 
-require('./src/routes/routes.js')(app, blogPost, project)
+require('./src/routes/routes.js')(app, blogPost, project, mo)
 
 app.listen(process.env.WEBPORT, (err) => {
     if (!err) {

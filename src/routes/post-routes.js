@@ -21,3 +21,17 @@
  *   SOFTWARE.
  */
 
+module.exports = (app, blogPost, project) => {
+
+    app.post('/blog/:token', (req, res) => {
+        blogPost.create({
+            date: Date.now(),
+            title: req.body.title,
+            markdown: req.body.markdown,
+            description: req.body.description
+        })
+
+        res.redirect('/admin/:token')
+    })
+
+}
