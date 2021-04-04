@@ -4,8 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/editor.css">
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/editor.css">
 
     <script src="/editor/tab.js" defer></script>
 </head>
@@ -15,7 +15,7 @@
         <input type="text" placeholder="Title" name="title" value="<%= post.title %> "><br>
         <textarea type="text" cols="80" rows="5" placeholder="Small Description" name="description"><%= post.description %> </textarea><br>
         <textarea id="mainText" name="markdown" cols="80" rows="30" placeholder="Markdown..."><%= post.markdown %> </textarea><br>
-        <button type="submit">Done</button>
+        <input type="submit" value="Done">
     </form>
 
 

@@ -20,47 +20,29 @@
  *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *   SOFTWARE.
  */
-const md5 = require('md5');
-module.exports = (app, blogPost, project) => {
 
-    app.post('/blog/:token', (req, res) => {
+h1 {
+  text-align: center;
+}
 
-        if (req.params.token == md5(process.env.ADMIN_TOKEN)) {
+input {
+  margin: 10px;
+  width: 100%;
+  font-size: 1em;
+}
 
-            
+textarea {
+  margin: 10px;
+  width: 100%;
+  /* font-size: 1.2em; */
+  font-family:Arial, Helvetica, sans-serif
+}
 
+form {
+  text-align: center;
+}
 
-            blogPost.create({
-                date: Date.now(),
-                title: req.body.title,
-                markdown: markdown,
-                description: req.body.description
-            })
+#content  {
 
-            res.redirect('/admin/' + req.params.token)
-        }
-        else
-            res.redirect('/')
-    })
-
-    app.post('/portfolio/:token', (req, res) => {
-        if(req.params.token == md5(process.env.ADMIN_TOKEN)) {
-
-            let tags = req.body.tags.split(',')
-            console.log(tags)
-
-            project.create({
-                tags: tags,
-                projectName: req.body.projectName,
-                description: req.body.description,
-                markdown: req.body.readme,
-                git: req.body.git,
-                date: Date.now()
-            })
-
-            res.redirect('/portfolio')
-        }
-
-    })
-
+  margin-top: 0px;
 }

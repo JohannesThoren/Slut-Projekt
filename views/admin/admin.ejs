@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="/admin.css">
+    <link rel="stylesheet" href="/style/admin.css">
 </head>
 
 <body>
@@ -15,7 +15,7 @@
     <div id="flex">
         <div class="panel" id="project_controll">
             <h1>Projects</h1>
-            <a href=""><button>New Project</button></a>
+            <a href="/admin/<%= token %>/projects/new"><button>New Project</button></a>
 
             <div class="scroll-panel">
                 <% for(project in projects) {%>

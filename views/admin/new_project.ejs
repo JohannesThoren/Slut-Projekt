@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/editor.css">
+</head>
+<body>
+    <h1>New Project</h1>
+    <form id="content" method="POST" action="/portfolio/<%= token %> ">
+        <input placeholder="ProjectName" type="text" name="projectName">
+        <textarea placeholder="description" name="description" id="" cols="30" rows="5"></textarea>
+        <!-- <label for="markdown_file">ethier upload a .md or write some markdown down below</label>
+        <input type="file" name="markdown" id="" placeholder="readme file"> -->
+        <textarea placeholder="readme" name="readme" id="" cols="30" rows="30"></textarea>
+        <input placeholder="tags, separate with comma. ex: js,css" type="text" name="tags" id="">
+        <input placeholder="git repo" type="text" name="git" id="">
+        <input type="submit" value="Done">
+    </form>
+
+
+</body>
+</html>

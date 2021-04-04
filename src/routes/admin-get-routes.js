@@ -77,4 +77,13 @@ module.exports = (app, blogPost, project) => {
         console.log(md5(process.env.ADMIN_TOKEN))
         res.redirect('/')
     })
+
+    app.get('/admin/:token/projects/new', (req, res) => {
+        if (req.params.token == md5(process.env.ADMIN_TOKEN))
+            res.render('admin/new_project', {token: req.params.token})
+        else
+            res.redirect('/')
+
+
+    })
 }

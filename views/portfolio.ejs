@@ -11,7 +11,7 @@
         integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"
         defer></script>
 
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/style/style.css">
 
 </head>
 
@@ -61,7 +61,7 @@
         </nav>
     </header>
 
-    <div id="content" class="row row-cols-1 row-cols-md-3 g-4">
+    <div id="content" class="row row-cols-1 row-cols-md-2 g-4">
         <% for (project in projects) { %>
             <div class="col">
                 <div class="card">
@@ -72,7 +72,8 @@
                         <p class="card-text">
                             <%= projects[project].description %>
                         </p>
-                        <a href="blog/<%= projects[project]._id %>" class="btn btn-primary">Read More</a>
+                        <a href="portfolio/project/<%= projects[project]._id %>" class="btn btn-primary">Documentation</a>
+                        <a href="<%= projects[project].git %>" class="btn btn-primary">Git Repo</a>
                     </div>
 
                     <div class="card-footer">
