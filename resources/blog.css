@@ -1,4 +1,4 @@
- /*
+/*
  *   Copyright (c) 2021 Johannes Thorén
  *   All rights reserved.
 
@@ -21,30 +21,19 @@
  *   SOFTWARE.
  */
 
-#content {
-    width:50%
-}
-
-pre {
-    border-left: 10px solid lightgray;
-    background-color: rgb(255, 255, 255);
+ #content {
+    width:70%;
+    font-size: 1.4em;
     padding: 10px;
-    background-color: #eee;
+    border-radius: 10px;
 }
 
-code {
-    background-color: #eee;
-    border-radius: 3px;
-    font-family: courier, monospace;
-    padding: 1px;
+.card{
+    margin: 10px;
+
 }
 
-img {
-    max-width: 100%;
-}
-
-@media screen and (max-width: 800px) {
-    #content {width: 98%;}
-
-
+h1 {
+    text-align: center;
+    text-decoration: underline;
 }

@@ -3,12 +3,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/editor.css">
+
+    
+    <script src="/editor/tab.js" defer></script>
 </head>
 <body>
-    <form method="POST" action="/blog/<%= token %> ">
+    <h1>New Post</h1>
+
+    <form id="content" method="POST" action="/blog/<%= token %> ">
         <input type="text" placeholder="Title" name="title"><br>
         <textarea type="text" cols="80" rows="5" placeholder="Small Description" name="description"></textarea><br>
-        <textarea name="markdown" cols="80" rows="40" placeholder="Markdown..."></textarea><br>
+        <textarea id="mainText" name="markdown" cols="80" rows="30" placeholder="Markdown..."></textarea><br>
         <button type="submit">Done</button>
     </form>
 

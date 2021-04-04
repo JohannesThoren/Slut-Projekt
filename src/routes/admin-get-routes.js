@@ -20,11 +20,13 @@
  *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *   SOFTWARE.
  */
- 
+
+const md5 = require('md5');
+
 module.exports = (app, blogPost, project) => {
     app.get('/admin/:token', (req, res) => {
-        if (req.params.token == process.env.ADMIN_TOKEN) {
-  
+        if (req.params.token == md5(process.env.ADMIN_TOKEN)) {
+
             blogPost.find({}, (err, posts) => {
                 if (!err) {
                     project.find({}, (err, projects) => {
@@ -34,33 +36,45 @@ module.exports = (app, blogPost, project) => {
                             console.log(err)
                     })
                 }
-                else 
+                else
                     console.log(err)
-            })     
+            })
         }
-        else 
+        else
             res.redirect('/')
-        
+
     })
 
     app.get('/admin/:token/posts/new', (req, res) => {
-        res.render('admin/new_blog_post', {token: req.params.token})
+        if (req.params.token == md5(process.env.ADMIN_TOKEN))
+            res.render('admin/new_blog_post', { token: req.params.token })
+        else
+            res.redirect('/')
     })
 
     app.get('/admin/:token/posts/:id/edit', (req, res) => {
-       blogPost.findById(req.params.id, (err, post) => {
-            if(!err)
-                res.render('admin/edit_blog_post', {token: req.params.token, post: post})
-            else
-                console.log(err)
-        })
+
+        if (req.params.token == md5(process.env.ADMIN_TOKEN)) {
+            blogPost.findById(req.params.id, (err, post) => {
+                if (!err)
+                    res.render('admin/edit_blog_post', { token: req.params.token, post: post })
+                else
+                    console.log(err)
+            })
+        }
+        else
+            res.redirect('/')
     })
 
     app.get('/admin/:token/posts/:id/delete', (req, res) => {
-        res.render('admin/delete_blog_post', {token: req.params.token, post_id: req.params.id})
+        if (req.params.token == md5(process.env.ADMIN_TOKEN))
+            res.render('admin/delete_blog_post', { token: req.params.token, post_id: req.params.id })
+        else
+            res.redirect('/')
     })
 
     app.get('/admin', (req, res) => {
+        console.log(md5(process.env.ADMIN_TOKEN))
         res.redirect('/')
     })
 }

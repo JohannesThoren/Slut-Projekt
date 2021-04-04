@@ -32,7 +32,7 @@
 
 .scroll-panel {
     overflow-y: scroll;
-    max-height: 800px;
+    max-height: 500px;
 }
     
 
@@ -45,4 +45,8 @@
 
 #flex {
     display: flex; 
+}
+
+h1 {
+    text-align: center;
 }

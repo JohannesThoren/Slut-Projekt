@@ -1,4 +1,4 @@
-/*
+ /*
  *   Copyright (c) 2021 Johannes Thorén
  *   All rights reserved.
 
@@ -20,23 +20,32 @@
  *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *   SOFTWARE.
  */
-const md5 = require('md5');
 
-module.exports = (app, blogPost, project) => {
+#content {
+    width: 50%
+}
 
-    app.put('/blog/:token/:id', async (req, res) => {
-        if (req.params.token == md5(process.env.ADMIN_TOKEN)) {
-            await blogPost.findByIdAndUpdate(req.params.id, {
-                date: Date.now(),
-                title: req.body.title,
-                markdown: req.body.markdown,
-                description: req.body.description
-            })
 
-            res.redirect('/admin/' + req.params.token)
-        }
-        else
-            res.redirect('/')
-    })
+pre {
+    border-left: 10px solid lightgray;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    background-color: #eee;
+}
+
+code {
+    background-color: #eee;
+    border-radius: 3px;
+    font-family: courier, monospace;
+    padding: 1px;
+}
+
+img {
+    max-width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+    #content {width: 90%;}
+
 
 }

@@ -20,23 +20,30 @@
  *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *   SOFTWARE.
  */
-const md5 = require('md5');
 
-module.exports = (app, blogPost, project) => {
+function enableTab(id) {
+    var el = document.getElementById(id);
+    el.onkeydown = function(e) {
+        if (e.keyCode === 9) { // tab was pressed
 
-    app.put('/blog/:token/:id', async (req, res) => {
-        if (req.params.token == md5(process.env.ADMIN_TOKEN)) {
-            await blogPost.findByIdAndUpdate(req.params.id, {
-                date: Date.now(),
-                title: req.body.title,
-                markdown: req.body.markdown,
-                description: req.body.description
-            })
+            // get caret position/selection
+            var val = this.value,
+                start = this.selectionStart,
+                end = this.selectionEnd;
 
-            res.redirect('/admin/' + req.params.token)
+            // set textarea value to: text before caret + tab + text after caret
+            this.value = val.substring(0, start) + '\t' + val.substring(end);
+
+            // put caret at right position again
+            this.selectionStart = this.selectionEnd = start + 1;
+
+            // prevent the focus lose
+            return false;
+
         }
-        else
-            res.redirect('/')
-    })
-
+    };
 }
+
+// Enable the tab character onkeypress (onkeydown) inside textarea...
+// ... for a textarea that has an `id="my-textarea"`
+enableTab('mainText');

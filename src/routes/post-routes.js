@@ -20,18 +20,23 @@
  *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *   SOFTWARE.
  */
-
+const md5 = require('md5');
 module.exports = (app, blogPost, project) => {
 
     app.post('/blog/:token', (req, res) => {
-        blogPost.create({
-            date: Date.now(),
-            title: req.body.title,
-            markdown: req.body.markdown,
-            description: req.body.description
-        })
 
-        res.redirect('/admin/'+req.params.token)
+        if (req.params.token == md5(process.env.ADMIN_TOKEN)) {
+            blogPost.create({
+                date: Date.now(),
+                title: req.body.title,
+                markdown: req.body.markdown,
+                description: req.body.description
+            })
+
+            res.redirect('/admin/' + req.params.token)
+        }
+        else
+            res.redirect('/')
     })
 
 }

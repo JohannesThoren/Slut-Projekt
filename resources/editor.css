@@ -20,23 +20,29 @@
  *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *   SOFTWARE.
  */
-const md5 = require('md5');
 
-module.exports = (app, blogPost, project) => {
+h1 {
+  text-align: center;
+}
 
-    app.put('/blog/:token/:id', async (req, res) => {
-        if (req.params.token == md5(process.env.ADMIN_TOKEN)) {
-            await blogPost.findByIdAndUpdate(req.params.id, {
-                date: Date.now(),
-                title: req.body.title,
-                markdown: req.body.markdown,
-                description: req.body.description
-            })
+input {
+  margin: 10px;
+  width: 100%;
+  font-size: 1.5em;
+}
 
-            res.redirect('/admin/' + req.params.token)
-        }
-        else
-            res.redirect('/')
-    })
+textarea {
+  margin: 10px;
+  width: 100%;
+  /* font-size: 1.2em; */
+  font-family:Arial, Helvetica, sans-serif
+}
 
+form {
+  text-align: center;
+}
+
+#content  {
+
+  margin-top: 0px;
 }
