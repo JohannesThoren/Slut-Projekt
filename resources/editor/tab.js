@@ -21,6 +21,9 @@
  *   SOFTWARE.
  */
 
+// Denna kod hittade jag på StackOverflow
+// så har inte skrivit denna kod.
+
 function enableTab(id) {
     var el = document.getElementById(id);
     el.onkeydown = function(e) {
