@@ -1,65 +1,80 @@
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
-    <link rel="stylesheet" href="/style/admin.css">
-</head>
+    <link rel="stylesheet" href="/style/admin.css" />
+  </head>
 
-<body>
+  <body>
     <h1>Admin Page</h1>
 
     <div id="flex">
-        <div class="panel" id="project_controll">
-            <h1>Projects</h1>
-            <a href="/admin/<%= token %>/projects/new"><button>New Project</button></a>
+      <div class="panel" id="project_controll">
+        <h1>Projects</h1>
+        <a href="/admin/<%= token %>/projects/new"
+          ><button>New Project</button></a
+        >
 
-            <div class="scroll-panel">
-                <% for(project in projects) {%>
-                    <div class="card" id="<%= projects[project].projectName %> ">
-                        <h2>
-                            <%= projects[project].projectName %>
-                        </h2>
-                        <h4>
-                            <%= projects[project].description %>
-                        </h4>
-                        <h6>
-                            <%= projects[project].tags %>
-                        </h6>
-                        <a href="/admin/<%=token%>/projects/<%=projects[project]._id%>/edit">Edit</a>
-                        <a href="/admin/<%=token%>/projects/<%=projects[project]._id%>/delete">Delete</a>
-                    </div>
-                    <% } %>
-            </div>
+        <div class="scroll-panel">
+          <% for(project in projects) {%>
+          <div class="card" id="<%= projects[project].projectName %> ">
+            <h2><%= projects[project].projectName %></h2>
+            <h4><%= projects[project].description %></h4>
+            <h6><%= projects[project].tags %></h6>
+            <a href="/admin/<%=token%>/projects/<%=projects[project]._id%>/edit"
+              >Edit</a
+            >
+            <a
+              href="/admin/<%=token%>/projects/<%=projects[project]._id%>/delete"
+              >Delete</a
+            >
+          </div>
+          <% } %>
         </div>
+      </div>
 
-
-        <div class="panel" id="blog_controll">
-            <h1>Blog Posts</h1>
-            <a href="/admin/<%=token%>/posts/new"><button>New Post</button></a>
-            <div class="scroll-panel">
-                <% for(post in posts) {%>
-                    <div class="card" id="<%= posts[post].title %> ">
-                        <h2>
-                            <%= posts[post].title %>
-                        </h2>
-                        <h4>
-                            <%= posts[post].description %>
-                        </h4>
-                        <h6>
-                            <%= posts[post].date %>
-                        </h6>
-                        <a href="/admin/<%=token%>/posts/<%=posts[post]._id%>/edit">Edit</a>
-                        <a href="/admin/<%=token%>/posts/<%=posts[post]._id%>/delete">Delete</a>
-                    </div>
-                    <% } %>
-            </div>
+      <div class="panel" id="blog_controll">
+        <h1>Blog Posts</h1>
+        <a href="/admin/<%=token%>/posts/new"><button>New Post</button></a>
+        <div class="scroll-panel">
+          <% for(post in posts) {%>
+          <div class="card" id="<%= posts[post].title %> ">
+            <h2><%= posts[post].title %></h2>
+            <h4><%= posts[post].description %></h4>
+            <h6><%= posts[post].date %></h6>
+            <a href="/admin/<%=token%>/posts/<%=posts[post]._id%>/edit">Edit</a>
+            <a href="/admin/<%=token%>/posts/<%=posts[post]._id%>/delete"
+              >Delete</a
+            >
+          </div>
+          <% } %>
         </div>
+      </div>
     </div>
 
-</body>
-
+    <div id="flex">
+      <div class="panel">
+        <h1>Messages</h1>
+        <% for (let contact=contacts.length - 1; contact >= 0; contact--) { %>
+        <div class="card">
+          <h2>Subject: <%= contacts[contact].subject %></h2>
+          <h3>Message</h3>
+          <pre>
+            <div class="scroll-panel">
+              <h4><%= contacts[contact].message %></h4>
+            </div>
+          
+          </pre>
+          
+          <h4>Name: <%= contacts[contact].name %> </h6>
+          <h4>Email: <%= contacts[contact].email %> </h6>
+          <h4>Sent: <%= contacts[contact].date %></h6>
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </body>
 </html>

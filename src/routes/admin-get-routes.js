@@ -21,89 +21,91 @@
  *   SOFTWARE.
  */
 
-const md5 = require('md5');
+const md5 = require("md5");
 
-module.exports = (app, blogPost, project) => {
-    app.get('/admin/:token', (req, res) => {
-        if (req.params.token == md5(process.env.ADMIN_TOKEN)) {
-
-            blogPost.find({}, (err, posts) => {
-                if (!err) {
-                    project.find({}, (err, projects) => {
-                        if (!err)
-                            res.render('admin/admin', { token: req.params.token, posts: posts, projects: projects })
-                        else
-                            console.log(err)
-                    })
-                }
-                else
-                    console.log(err)
-            })
-        }
-        else
-            res.redirect('/')
-
-    })
-
-    app.get('/admin/:token/posts/new', (req, res) => {
-        if (req.params.token == md5(process.env.ADMIN_TOKEN))
-            res.render('admin/new_blog_post', { token: req.params.token })
-        else
-            res.redirect('/')
-    })
-
-    app.get('/admin/:token/posts/:id/edit', (req, res) => {
-
-        if (req.params.token == md5(process.env.ADMIN_TOKEN)) {
-            blogPost.findById(req.params.id, (err, post) => {
+module.exports = (app, blogPost, project, contact) => {
+  app.get("/admin/:token", (req, res) => {
+    if (req.params.token == md5(process.env.ADMIN_TOKEN)) {
+      blogPost.find({}, (err, posts) => {
+        if (!err) {
+          project.find({}, (err, projects) => {
+            if (!err)
+              contact.find({}, (err, contacts) => {
                 if (!err)
-                    res.render('admin/edit_blog_post', { token: req.params.token, post: post })
-                else
-                    console.log(err)
-            })
-        }
-        else
-            res.redirect('/')
-    })
+                  res.render("admin/admin", {
+                    token: req.params.token,
+                    posts: posts,
+                    projects: projects,
+                    contacts: contacts
+                  });
+                else console.log(err);
+              });
+            else console.log(err);
+          });
+        } else console.log(err);
+      });
+    } else res.redirect("/");
+  });
 
-    app.get('/admin/:token/posts/:id/delete', (req, res) => {
-        if (req.params.token == md5(process.env.ADMIN_TOKEN))
-            res.render('admin/delete_blog_post', { token: req.params.token, post_id: req.params.id })
-        else
-            res.redirect('/')
-    })
+  app.get("/admin/:token/posts/new", (req, res) => {
+    if (req.params.token == md5(process.env.ADMIN_TOKEN))
+      res.render("admin/new_blog_post", { token: req.params.token });
+    else res.redirect("/");
+  });
 
-    app.get('/admin', (req, res) => {
-        console.log(md5(process.env.ADMIN_TOKEN))
-        res.redirect('/')
-    })
+  app.get("/admin/:token/posts/:id/edit", (req, res) => {
+    if (req.params.token == md5(process.env.ADMIN_TOKEN)) {
+      blogPost.findById(req.params.id, (err, post) => {
+        if (!err)
+          res.render("admin/edit_blog_post", {
+            token: req.params.token,
+            post: post,
+          });
+        else console.log(err);
+      });
+    } else res.redirect("/");
+  });
 
-    app.get('/admin/:token/projects/new', (req, res) => {
-        if (req.params.token == md5(process.env.ADMIN_TOKEN))
-            res.render('admin/new_project', {token: req.params.token})
-        else
-            res.redirect('/')
+  app.get("/admin/:token/posts/:id/delete", (req, res) => {
+    if (req.params.token == md5(process.env.ADMIN_TOKEN))
+      res.render("admin/delete_blog_post", {
+        token: req.params.token,
+        post_id: req.params.id,
+      });
+    else res.redirect("/");
+  });
 
+  app.get("/admin", (req, res) => {
+    console.log(md5(process.env.ADMIN_TOKEN));
+    res.redirect("/");
+  });
 
-    })
+  app.get("/admin/:token/projects/new", (req, res) => {
+    if (req.params.token == md5(process.env.ADMIN_TOKEN))
+      res.render("admin/new_project", { token: req.params.token });
+    else res.redirect("/");
+  });
 
-    app.get('/admin/:token/projects/:id/edit', (req, res) => {
-        if (req.params.token == md5(process.env.ADMIN_TOKEN)) {
-            project.findById(req.params.id, (err, project) => {
-                console.log(project._id)
-                res.render('admin/edit_project', {token: req.params.token, project: project})
-            })
-        }
-        else {
-            res.redirect('/')
-        }
+  app.get("/admin/:token/projects/:id/edit", (req, res) => {
+    if (req.params.token == md5(process.env.ADMIN_TOKEN)) {
+      project.findById(req.params.id, (err, project) => {
+        console.log(project._id);
+        res.render("admin/edit_project", {
+          token: req.params.token,
+          project: project,
+        });
+      });
+    } else {
+      res.redirect("/");
+    }
+  });
 
-    }) 
-
-    app.get('/admin/:token/projects/:id/delete', (req, res) => {
-        if (req.params.token == md5(process.env.ADMIN_TOKEN))
-            res.render('admin/delete_project', { token: req.params.token, project_id: req.params.id })
-        else
-            res.redirect('/')
-    })
-}
+  app.get("/admin/:token/projects/:id/delete", (req, res) => {
+    if (req.params.token == md5(process.env.ADMIN_TOKEN))
+      res.render("admin/delete_project", {
+        token: req.params.token,
+        project_id: req.params.id,
+      });
+    else res.redirect("/");
+  });
+};

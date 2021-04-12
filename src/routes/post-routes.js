@@ -20,47 +20,47 @@
  *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *   SOFTWARE.
  */
-const md5 = require('md5');
-module.exports = (app, blogPost, project) => {
+const md5 = require("md5");
+module.exports = (app, blogPost, project, contact) => {
+  app.post("/blog/:token", (req, res) => {
+    if (req.params.token == md5(process.env.ADMIN_TOKEN)) {
+      blogPost.create({
+        date: Date.now(),
+        title: req.body.title,
+        markdown: markdown,
+        description: req.body.description,
+      });
 
-    app.post('/blog/:token', (req, res) => {
+      res.redirect("/admin/" + req.params.token);
+    } else res.redirect("/");
+  });
 
-        if (req.params.token == md5(process.env.ADMIN_TOKEN)) {
+  app.post("/portfolio/:token", (req, res) => {
+    if (req.params.token == md5(process.env.ADMIN_TOKEN)) {
+      let tags = req.body.tags.split(",");
+      console.log(tags);
 
-            
+      project.create({
+        tags: tags,
+        projectName: req.body.projectName,
+        description: req.body.description,
+        markdown: req.body.markdown,
+        git: req.body.git,
+        date: Date.now(),
+      });
 
+      res.redirect("/portfolio");
+    }
+  });
 
-            blogPost.create({
-                date: Date.now(),
-                title: req.body.title,
-                markdown: markdown,
-                description: req.body.description
-            })
-
-            res.redirect('/admin/' + req.params.token)
-        }
-        else
-            res.redirect('/')
+  app.post("/contact", (req, res) => {
+    contact.create({
+        subject: req.body.subject,
+        message: req.body.message,
+        name: req.body.name,
+        email: req.body.email,
+        date: Date.now()
     })
-
-    app.post('/portfolio/:token', (req, res) => {
-        if(req.params.token == md5(process.env.ADMIN_TOKEN)) {
-
-            let tags = req.body.tags.split(',')
-            console.log(tags)
-
-            project.create({
-                tags: tags,
-                projectName: req.body.projectName,
-                description: req.body.description,
-                markdown: req.body.markdown,
-                git: req.body.git,
-                date: Date.now()
-            })
-
-            res.redirect('/portfolio')
-        }
-
-    })
-
-}
+    res.redirect("/contact")
+  });
+};

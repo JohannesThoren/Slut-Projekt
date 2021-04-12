@@ -1,23 +1,46 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
-    <link rel="stylesheet" href="/style/style.css">
-    <link rel="stylesheet" href="/style/editor.css">
+    <link rel="stylesheet" href="/style/style.css" />
+    <link rel="stylesheet" href="/style/editor.css" />
 
     <script src="/editor/tab.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Edit Post</h1>
-    <form id="content" method="POST" action="/blog/<%= token %>/<%= post._id %>?_method=PUT">
-        <input type="text" placeholder="Title" name="title" value="<%= post.title %> "><br>
-        <textarea type="text" cols="80" rows="5" placeholder="Small Description" name="description"><%= post.description %> </textarea><br>
-        <textarea id="mainText" name="markdown" cols="80" rows="30" placeholder="Markdown..."><%= post.markdown %> </textarea><br>
-        <input type="submit" value="Done">
+    <form
+      id="content"
+      method="POST"
+      action="/blog/<%= token %>/<%= post._id %>?_method=PUT"
+    >
+      <input
+        type="text"
+        placeholder="Title"
+        name="title"
+        value="<%= post.title %> "
+      /><br />
+      <textarea
+        type="text"
+        cols="80"
+        rows="5"
+        placeholder="Small Description"
+        name="description"
+      >
+<%= post.description %> </textarea
+      ><br />
+      <textarea
+        id="mainText"
+        name="markdown"
+        cols="80"
+        rows="30"
+        placeholder="Markdown..."
+      >
+<%= post.markdown %> </textarea
+      ><br />
+      <input type="submit" value="Done" />
     </form>
-
-
-</body>
+  </body>
 </html>

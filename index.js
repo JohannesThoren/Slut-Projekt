@@ -28,7 +28,7 @@ const marked = require('marked')
 
 require('dotenv').config()
 
-const {blogPost, project} = require('./src/database/database');
+const {blogPost, project, contact} = require('./src/database/database');
  
 app.set('view engine', 'ejs')
 app.use(exp.urlencoded({extended: true}))
@@ -53,7 +53,7 @@ app.use(mo('_method'))
 //     updated: Date.now()
 // })
 
-require('./src/routes/routes.js')(app, blogPost, project, mo)
+require('./src/routes/routes.js')(app, blogPost, project, contact, mo)
 
 app.listen(process.env.WEBPORT, (err) => {
     if (!err) {

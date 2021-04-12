@@ -41,9 +41,19 @@ const Project = new mon.Schema({
     updated: Date
 });
 
+const Contact = new mon.Schema({
+    subject: String,
+    message: String,
+    name: String,
+    email: String,
+    date: Date
+
+})
+
 // this exports the mongod models
 const blogPost = mon.model("blogPost", BlogPost)
 const project = mon.model("project", Project)
+const contact = mon.model("contact", Contact)
 
-module.exports = {blogPost, project}
+module.exports = {blogPost, project, contact}
 

@@ -27,6 +27,12 @@ body {
 
 }
 
+header {
+    top: 0px;
+    position: fixed;
+    width: 100%;
+}
+
 #content {
     /* width: 80%; */
     margin: 100px;
