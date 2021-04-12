@@ -61,33 +61,44 @@
         </nav>
     </header>
 
-    <div id="content" class="row row-cols-1 row-cols-md-2 g-4">
-        <% for (project in projects) { %>
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            <%=projects[project].projectName%>
-                        </h4>
-                        <p class="card-text">
-                            <%= projects[project].description %>
-                        </p>
-                        <a href="portfolio/project/<%= projects[project]._id %>" class="btn btn-primary">Documentation</a>
-                        <a href="<%= projects[project].git %>" class="btn btn-primary">Git Repo</a>
-                    </div>
+    <div id="content" class="bg-light">
+        <h1>Portfolio</h1>
 
-                    <div class="card-footer">
-                        <div class="btn-group">
-                        <% for(tag in projects[project].tags) { %>
-                            <a class="btn btn-primary btn-sm" href="/portfolio/<%= projects[project].tags[tag] %>">
-                                <%= projects[project].tags[tag] %>
-                            </a>
-                            <% } %>
+        <p>This is my portfolio, containing all projects i have made public. All projects have a git link (or at least they should have a git link) and some
+            Documentation. The portfolio can be sorted by tags, just click on the tag you what to sort by (the buttons
+            in the footer of the cards)</p>
+
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <% for (project in projects) { %>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                <%=projects[project].projectName%>
+                            </h4>
+                            <p class="card-text">
+                                <%= projects[project].description %>
+                            </p>
+                            <a href="project/<%= projects[project]._id %>"
+                                class="btn btn-primary">Documentation</a>
+                            <a href="<%= projects[project].git %>" class="btn btn-primary">Git Repo</a>
+                        </div>
+
+                        <div class="card-footer">
+                            <div class="btn-group">
+                                <% for(tag in projects[project].tags) { %>
+                                    <a class="btn btn-primary btn-sm"
+                                        href="/portfolio/<%= projects[project].tags[tag] %>">
+                                        <%= projects[project].tags[tag] %>
+                                    </a>
+                                    <% } %>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <% } %>
+                <% } %>
+        </div>
+    </div>
 
 </body>
 

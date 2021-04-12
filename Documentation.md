@@ -4,11 +4,10 @@ Detta är dokumentationen för slut projektet i weuweb och wesweb, jag vill pås
 ## första sidan
 Varför får första sidan en egen rubrik? jo det är ju den som man först ser och som avgör om man kommer kolla vidare på sidan eller stänga ner den. är inte första sidan intressant så är hela sidan meninglös. 
 
-just nu har inte jag så jätte mycket på första sidan, det som finns är det senaste blogg inlägget. 
-
+första sidan 
 
 ## Portfolio
-Portfolio delen kommer att betå av en ganska enkel layout, varje projekt kommer ha sitt egna kort med en kort beskrivning. det kommer även att finnas knappar för att läsa mer samt att gå direkt till git länken. 
+Portfolio delen kommer att bestå av en ganska enkel layout, varje projekt kommer ha sitt egna kort med en kort beskrivning. det kommer även att finnas knappar för att läsa mer samt att gå direkt till git länken. 
 
 jag har dock valt att istället för att ha 3 st kort på varje rad så kommer det att bli 2. Det ser helt enkelt bättre ut. men funderar just nu på om jag ska bara ha ett kort per rad (så som på blogg sidan)
 

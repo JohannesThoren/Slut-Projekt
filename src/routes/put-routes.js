@@ -39,4 +39,22 @@ module.exports = (app, blogPost, project) => {
             res.redirect('/')
     })
 
+    app.put('/portfolio/:token/:id', async (req, res) => {
+        if (req.params.token == md5(process.env.ADMIN_TOKEN)) {
+            let tags = req.body.tags.split(',')
+            await project.findByIdAndUpdate(req.params.id, {
+                tags: tags,
+                projectName: req.body.projectName,
+                description: req.body.description,
+                markdown: req.body.markdown,
+                git: req.body.git,
+                updated: Date.now()
+            })
+
+            res.redirect('/admin/'+ req.params.token)
+        }
+        else 
+            res.redirect('/')
+    })
+
 }

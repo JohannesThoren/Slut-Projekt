@@ -86,4 +86,24 @@ module.exports = (app, blogPost, project) => {
 
 
     })
+
+    app.get('/admin/:token/projects/:id/edit', (req, res) => {
+        if (req.params.token == md5(process.env.ADMIN_TOKEN)) {
+            project.findById(req.params.id, (err, project) => {
+                console.log(project._id)
+                res.render('admin/edit_project', {token: req.params.token, project: project})
+            })
+        }
+        else {
+            res.redirect('/')
+        }
+
+    }) 
+
+    app.get('/admin/:token/projects/:id/delete', (req, res) => {
+        if (req.params.token == md5(process.env.ADMIN_TOKEN))
+            res.render('admin/delete_project', { token: req.params.token, project_id: req.params.id })
+        else
+            res.redirect('/')
+    })
 }

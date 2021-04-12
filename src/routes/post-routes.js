@@ -53,7 +53,7 @@ module.exports = (app, blogPost, project) => {
                 tags: tags,
                 projectName: req.body.projectName,
                 description: req.body.description,
-                markdown: req.body.readme,
+                markdown: req.body.markdown,
                 git: req.body.git,
                 date: Date.now()
             })

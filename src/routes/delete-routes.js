@@ -20,13 +20,24 @@
  *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *   SOFTWARE.
  */
+
+
 const md5 = require('md5');
-module.exports = (app, blogPost, porject, mo) => {
+module.exports = (app, blogPost, project, mo) => {
     app.delete('/blog/:token/:id', (req, res) => {
-        if(req.params.token == md5(process.env.ADMIN_TOKEN)) {
+        if (req.params.token == md5(process.env.ADMIN_TOKEN)) {
             blogPost.findByIdAndDelete(req.params.id, (err, doc) => {
-                if(err) console.log(err)
-                else res.redirect('/admin/'+req.params.token);
+                if (err) console.log(err)
+                else res.redirect('/admin/' + req.params.token);
+            })
+        }
+    })
+
+    app.delete('/portfolio/:token/:id', (req, res) => {
+        if (req.params.token == md5(process.env.ADMIN_TOKEN)) {
+            project.findByIdAndDelete(req.params.id, (err, doc) => {
+                if (err) console.log(err)
+                else res.redirect('/admin/' + req.params.token);
             })
         }
     })
