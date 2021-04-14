@@ -27,7 +27,7 @@ module.exports = (app, blogPost, project, contact) => {
       blogPost.create({
         date: Date.now(),
         title: req.body.title,
-        markdown: markdown,
+        markdown: req.body.markdown,
         description: req.body.description,
       });
 

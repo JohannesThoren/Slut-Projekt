@@ -20,6 +20,10 @@
  *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *   SOFTWARE.
  */
+ body {
+    margin: 0;
+
+ }
 
 .panel {
     width: 100%;
@@ -32,6 +36,7 @@
 }
 
 .scroll-panel {
+    width: 100%;
     overflow-y: scroll;
     max-height: 500px;
 }

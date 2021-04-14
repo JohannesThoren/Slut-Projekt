@@ -1,4 +1,4 @@
- /*
+/*
  *   Copyright (c) 2021 Johannes Thorén
  *   All rights reserved.
 
@@ -21,56 +21,38 @@
  *   SOFTWARE.
  */
 
-#content {
-    width: 50%
+
+.prim-bg-color {
+    background-color: #405240
+}
+.sec-bg-color {
+    background-color: #738573
 }
 
-#header {
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 1.5em;
+.prim-color {
+    background-color: #610F23
 }
 
-pre {
-    border-left: 10px solid lightgray;
-    background-color: rgb(255, 255, 255);
-    padding: 10px;
-    background-color: #eee;
+.sec-color {
+    background-color: #741e33
 }
 
-code {
-    background-color: #eee;
-    border-radius: 3px;
-    font-family: courier, monospace;
-    padding: 1px;
+.prim-fg-color {
+    color: white;
 }
 
-blockquote {
-    border-left: 2px solid lightgray;
-    padding-right: 5px;
+.prim-color:focus {
+    color: #738573;
+    border: none;
+    box-shadow: none;
 }
 
-table {
-    /* margin-right: auto; */
-    /* margin-left: auto; */
-    border: 0.0625rem solid;
-    border-collapse: collapse;
+.sec-color:focus {
+    color: #738573;
+    border: none;
+    box-shadow: none
 }
 
-table,
-td,
-th {
-    border: 0.0625rem solid lightgray;
-    padding: 0.3125rem;
-}
-
-img {
-    max-width: 100%;
-}
-
-@media screen and (max-width: 800px) {
-    #content {width: 90%;}
-
-
+.prim-fg-color:focus {
+    background-color:#610F23;
 }
