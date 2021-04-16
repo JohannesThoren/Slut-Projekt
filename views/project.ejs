@@ -16,6 +16,12 @@
       <a id="gitRepo" href="<%= project.git %> ">git repository</a>
     </div>
 
-    <div id="content"><%- markdown %></div>
+    <div id="content">
+      <%- markdown %>
+
+
+      <p class="small-text">updated: <%= project.updated %> </p>
+    </div>
+
   </body>
 </html>

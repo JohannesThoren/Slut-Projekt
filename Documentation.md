@@ -1,10 +1,18 @@
+- [Slut Projektet, weuweb och wesweb](#slut-projektet-weuweb-och-wesweb)
+  - [första sidan](#första-sidan)
+  - [Portfolio](#portfolio)
+  - [Bloggen](#bloggen)
+  - [Hur ser tidsplanen ut?](#hur-ser-tidsplanen-ut)
+
 # Slut Projektet, weuweb och wesweb
 Detta är dokumentationen för slut projektet i weuweb och wesweb, jag vill påstå att det har gått ganska bra och att jag har följt tidsplanen ganska noga. vissa saker har gått snabbare än förväntat vilket ger mig tid att jobba på annat eller förbättra.
 
 ## första sidan
 Varför får första sidan en egen rubrik? jo det är ju den som man först ser och som avgör om man kommer kolla vidare på sidan eller stänga ner den. är inte första sidan intressant så är hela sidan meninglös. 
 
-första sidan 
+några ideér om vad som ska finnas pǻ första sidan är
+- senaste blogginlägget
+- en karusell med projekt och bilder
 
 ## Portfolio
 Portfolio delen kommer att bestå av en ganska enkel layout, varje projekt kommer ha sitt egna kort med en kort beskrivning. det kommer även att finnas knappar för att läsa mer samt att gå direkt till git länken. 

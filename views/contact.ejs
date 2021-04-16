@@ -18,16 +18,18 @@
       crossorigin="anonymous"
       defer
     ></script>
+    <script src="https://kit.fontawesome.com/496d5e0e85.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="/style/editor.css" />
     <link rel="stylesheet" href="/style/style.css" />
     <link rel="stylesheet" href="/style/blog.css" />
     <link rel="stylesheet" href="/style/colors.css">
+    <link rel="stylesheet" href="/style/contact.css">
   </head>
-<body class="prim-bg-color">
-    <body class="prim-bg-color">
+<body class="bg1">
+    <body class="bg1">
       <header id="header">
-        <nav class="navbar navbar-expand-lg navbar-dark prim-color">
+        <nav class="navbar navbar-expand-lg navbar-dark prim1">
           <div class="container-fluid">
             <a class="navbar-brand" href="/">Thorén</a>
     
@@ -55,18 +57,18 @@
                     data-bs-toggle="dropdown" aria-expanded="false">
                     Portfolio
                   </a>
-                  <ul class="dropdown-menu  sec-bg-color" aria-labelledby="navbarDropdownMenuLink">
+                  <ul class="dropdown-menu  bg2" aria-labelledby="navbarDropdownMenuLink">
                     <li>
-                      <a class="dropdown-item prim-fg-color" href="/portfolio">Overview</a>
+                      <a class="dropdown-item fg1" href="/portfolio">Overview</a>
                     </li>
                     <li>
-                      <a class="dropdown-item prim-fg-color" href="/portfolio/rust">Rust</a>
+                      <a class="dropdown-item fg1" href="/portfolio/rust">Rust</a>
                     </li>
                     <li>
-                      <a class="dropdown-item prim-fg-color" href="/portfolio/python">Python</a>
+                      <a class="dropdown-item fg1" href="/portfolio/python">Python</a>
                     </li>
                     <li>
-                      <a class="dropdown-item prim-fg-color" href="/portfolio/nodejs">NodeJS</a>
+                      <a class="dropdown-item fg1" href="/portfolio/nodejs">NodeJS</a>
                     </li>
                   </ul>
                 </li>
@@ -76,34 +78,34 @@
         </nav>
       </header>
 
-    <div id="content" class="sec-bg-color prim-fg-color">
+    <div id="content" class="bg2 fg1">
       <h1>Contact Information</h1>
       <p>
-        Hello! downbelow you will find my contact information or if you whant
+        Hello! here you will find my contact information or if you whant
         send a message directly from this page.
       </p>
-
-      <h2>Email</h2>
+      <h4>Email addresses</h4>
       <ul>
-        <li>Johannes.work@outlook.com</li>
-        <li>joh.work@gmail.com</li>
+        <li>Johannes.Thoren@outlook.com</li>
+        <li>joh.tho0309@gmail.com</li>
       </ul>
 
-      <h2>Social media</h2>
-      <ul>
-        <li><a href="">Github</a></li>
-        <li><a href="">Twitter</a></li>
-        <li><a href="">Instagram</a></li>
-      </ul>
+        <div id="social-medias">
+        <a href="" class="btn btn-lg prim2 fg1"><i class="fab fa-github"></i></a>
+        <a href="" class="btn btn-lg prim2 fg1"><i class="fab fa-instagram"></i></a>
+        <a href="" class="btn btn-lg prim2 fg1"><i class="fab fa-twitter"></i></a>
+        <a href="" class="btn btn-lg prim2 fg1"><i class="fab fa-facebook-f"></i></a>
+   
+      </div>
 
       <h2>Send Me A Message</h2>
-      <form method="POST" action="/contact" class="">
+      <form method="POST" action="/contact">
         <input type="text" name="subject" placeholder="Subject" />
         <textarea
           name="message"
           id=""
           cols="30"
-          rows="10"
+          rows="8"
           placeholder="Message"
         ></textarea>
         <input type="text" name="name" value="" placeholder="your name">

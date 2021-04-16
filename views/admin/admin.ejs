@@ -55,28 +55,7 @@
       </div>
     </div>
 
-    <div id="flex">
-      <div class="panel">
-      <h1>Messages</h1>
-      <div class="scroll-panel"> 
-        <% for (let contact=contacts.length - 1; contact >= 0; contact--) { %>
-        <div class="card">
-          <h2>Subject: <%= contacts[contact].subject %></h2>
-          <h3>Message</h3>
-          <pre>
-            <div class="scroll-panel">
-              <h4><%= contacts[contact].message %></h4>
-            </div>
-          
-          </pre>
-          
-          <h4>Name: <%= contacts[contact].name %> </h6>
-          <h4>Email: <%= contacts[contact].email %> </h6>
-          <h4>Sent: <%= contacts[contact].date %></h6>
-        </div>
-        <% } %>
-      </div>
-    </div>
+
     </div>
   </body>
 </html>

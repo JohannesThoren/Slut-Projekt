@@ -20,47 +20,55 @@
  *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *   SOFTWARE.
  */
+ :root {
+    --bg1: #405240;
+    --bg2: #738573;
+    --prim1: #610F23;
+    --prim2: #741e33;
+    --fg1: white;
+ }
 
 
-.prim-bg-color {
-    background-color: #405240
+.bg1 {
+    background-color: var(--bg1)
 }
-.sec-bg-color {
-    background-color: #738573
-}
-
-.prim-color {
-    background-color: #610F23
-}
-
-.sec-color {
-    background-color: #741e33
-}
-
-.prim-fg-color {
-    color: white;
+.bg2 {
+    background-color: var(--bg2)
 }
 
-.prim-color:focus {
+.prim1 {
+    background-color: var(--prim1)
+}
+
+.prim2 {
+    background-color: var(--prim2)
+}
+
+.fg1 {
+    color: var(--fg1);
+}
+
+.prim1:focus {
     /* color: #738573; */
     border: none;
     box-shadow: none;
 }
 
-.sec-color:focus {
-    color: #738573;
+.prim2:focus {
+    /* color: var(--bg2); */
     border: none;
     box-shadow: none
 }
 
-.prim-fg-color:focus {
-    background-color:#741e33;
+.fg1:focus {
+    background-color:var(--prim2);
 }
 
-.sec-color:hover {
-    color: white;
-    background-color: #738573;
+.prim2:hover {
+    color: var(--fg);
+    background-color: var(--bg2);
+    border: 1px solid var(--prim2)
 }
 a {
-     color: #741e33
+     color: var(--prim2)
 }

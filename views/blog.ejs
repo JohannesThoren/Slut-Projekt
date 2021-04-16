@@ -13,12 +13,12 @@
 
     <link rel="stylesheet" href="/style/style.css">
     <link rel="stylesheet" href="/style/blog.css">
-
+    <link rel="stylesheet" href="/style/colors.css">
 </head>
 
-<body class="bg-secondary">
+<body class="bg1">
     <header id="header">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark prim1">
             <div class="container-fluid">
                 <a class="navbar-brand" href="/">Thorén</a>
 
@@ -46,11 +46,11 @@
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 Portfolio
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="/portfolio">Overview</a></li>
-                                <li><a class="dropdown-item" href="/portfolio/rust">Rust</a></li>
-                                <li><a class="dropdown-item" href="/portfolio/python">Python</a></li>
-                                <li><a class="dropdown-item" href="/portfolio/nodejs">NodeJS</a></li>
+                            <ul class="dropdown-menu bg2" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item fg1" href="/portfolio">Overview</a></li>
+                                <li><a class="dropdown-item fg1" href="/portfolio/rust">Rust</a></li>
+                                <li><a class="dropdown-item fg1" href="/portfolio/python">Python</a></li>
+                                <li><a class="dropdown-item fg1" href="/portfolio/nodejs">NodeJS</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -61,12 +61,12 @@
         </nav>
     </header>
 
-    <div id="content" class="bg-light">
+    <div id="content" class="bg2 fg1">
         <h1>Blog Feed</h1>
 
         <% for (let post=posts.length - 1; post>= 0; post--) { %>
 
-            <div class="card">
+            <div class="card bg1">
                 <div class="card-body">
                     <h3 class="card-title">
                         <%=posts[post].title%>
@@ -74,10 +74,10 @@
                     <p class="card-text">
                         <%= posts[post].description %>
                     </p>
-                    <a href="blog/<%= posts[post]._id %>" class="btn btn-primary">Read More</a>
+                    <a href="blog/<%= posts[post]._id %>" class="btn prim2 fg1">Read More</a>
                 </div>
 
-                <div class="card-footer">
+                <div class="card-footer prim1">
                     <span class="small-text text-muted">
                         <%=posts[post].date%>
                     </span>

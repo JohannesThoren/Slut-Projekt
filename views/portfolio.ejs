@@ -9,14 +9,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"
       defer></script>
-  
+      <script src="https://kit.fontawesome.com/496d5e0e85.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/style/style.css" />
     <link rel="stylesheet" href="/style/colors.css">
   </head>
   
-  <body class="prim-bg-color">
+  <body class="bg1">
     <header id="header">
-      <nav class="navbar navbar-expand-lg navbar-dark prim-color">
+      <nav class="navbar navbar-expand-lg navbar-dark prim1">
         <div class="container-fluid">
           <a class="navbar-brand" href="/">Thorén</a>
   
@@ -44,18 +44,18 @@
                   data-bs-toggle="dropdown" aria-expanded="false">
                   Portfolio
                 </a>
-                <ul class="dropdown-menu  sec-bg-color" aria-labelledby="navbarDropdownMenuLink">
+                <ul class="dropdown-menu  bg2" aria-labelledby="navbarDropdownMenuLink">
                   <li>
-                    <a class="dropdown-item prim-fg-color" href="/portfolio">Overview</a>
+                    <a class="dropdown-item fg1" href="/portfolio">Overview</a>
                   </li>
                   <li>
-                    <a class="dropdown-item prim-fg-color" href="/portfolio/rust">Rust</a>
+                    <a class="dropdown-item fg1" href="/portfolio/rust">Rust</a>
                   </li>
                   <li>
-                    <a class="dropdown-item prim-fg-color" href="/portfolio/python">Python</a>
+                    <a class="dropdown-item fg1" href="/portfolio/python">Python</a>
                   </li>
                   <li>
-                    <a class="dropdown-item prim-fg-color" href="/portfolio/nodejs">NodeJS</a>
+                    <a class="dropdown-item fg1" href="/portfolio/nodejs">NodeJS</a>
                   </li>
                 </ul>
               </li>
@@ -66,7 +66,7 @@
     </header>
   
 
-    <div id="content" class="sec-bg-color prim-fg-color">
+    <div id="content" class="bg2 fg1">
       <h1>Portfolio</h1>
 
       <p>
@@ -79,25 +79,27 @@
       <div class="row row-cols-1 row-cols-md-2 g-4">
         <% for (project in projects) { %>
         <div class="col">
-          <div class="card prim-bg-color">
+          <div class="card bg1">
             <div class="card-body">
               <h3 class="card-title"><%=projects[project].projectName%></h3>
               <p class="card-text"><%= projects[project].description %></p>
               <a
-                href="project/<%= projects[project]._id %>"
-                class="btn sec-color prim-fg-color"
+                href="/portfolio/project/<%= projects[project]._id %>"
+                class="btn prim2 fg1"
                 >Documentation</a
               >
-              <a href="<%= projects[project].git %>" class="btn sec-color prim-fg-color"
-                >Git Repo</a
-              >
+              <a href="<%= projects[project].git %>" class="btn btn-lg prim2 fg1"> <i class="fab fa-github-square"></i>
+              </a>
+          
+
+         
             </div>
 
-            <div class="card-footer prim-color">
+            <div class="card-footer prim1">
               <div class="btn-group">
                 <% for(tag in projects[project].tags) { %>
                 <a
-                  class="btn sec-color prim-fg-color btn-sm"
+                  class="btn prim2 fg1 btn-sm"
                   href="/portfolio/<%= projects[project].tags[tag] %>"
                 >
                   <%= projects[project].tags[tag] %>

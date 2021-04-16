@@ -30,15 +30,10 @@ module.exports = (app, blogPost, project, contact) => {
         if (!err) {
           project.find({}, (err, projects) => {
             if (!err)
-              contact.find({}, (err, contacts) => {
-                if (!err)
-                  res.render("admin/admin", {
-                    token: req.params.token,
-                    posts: posts,
-                    projects: projects,
-                    contacts: contacts
-                  });
-                else console.log(err);
+              res.render("admin/admin", {
+                token: req.params.token,
+                posts: posts,
+                projects: projects,
               });
             else console.log(err);
           });
@@ -46,6 +41,13 @@ module.exports = (app, blogPost, project, contact) => {
       });
     } else res.redirect("/");
   });
+
+  // TODO add a recvdmsg route... it will contain all received messages
+  // app.get("/admin/:token/recvdmsg", (req, res) => {
+  //   if (req.params.token == md5(process.env.ADMIN_TOKEN))
+  //     res.render("admin/new_blog_post", { token: req.params.token });
+  //   else res.redirect("/");
+  // });
 
   app.get("/admin/:token/posts/new", (req, res) => {
     if (req.params.token == md5(process.env.ADMIN_TOKEN))
