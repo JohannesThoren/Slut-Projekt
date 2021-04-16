@@ -48,15 +48,19 @@
 }
 
 .sec-color:focus {
-    /* color: #738573; */
+    color: #738573;
     border: none;
     box-shadow: none
 }
 
 .prim-fg-color:focus {
-    /* background-color:#738573; */
+    background-color:#741e33;
 }
 
+.sec-color:hover {
+    color: white;
+    background-color: #738573;
+}
 a {
      color: #741e33
 }
