@@ -74,7 +74,7 @@ module.exports = (app, blogPost, project) => {
 
    app.get('/portfolio/project/:id', (req, res) => {
       project.findById(req.params.id, async (err, project) => {
-         console.log(project)
+         // console.log(project)
          let md = await marked(project.markdown).toString()
 
          res.render('project', {project: project, markdown: md})

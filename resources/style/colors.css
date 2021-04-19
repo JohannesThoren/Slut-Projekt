@@ -23,9 +23,11 @@
  :root {
     --bg1: #405240;
     --bg2: #738573;
+    --bg3: white;
     --prim1: #610F23;
     --prim2: #741e33;
     --fg1: white;
+    --fg2: black;
  }
 
 
@@ -34,6 +36,9 @@
 }
 .bg2 {
     background-color: var(--bg2)
+}
+.bg3 {
+    background-color: var(--bg3)
 }
 
 .prim1 {
@@ -46,6 +51,9 @@
 
 .fg1 {
     color: var(--fg1);
+}
+.fg2  {
+    color: var(--fg2);
 }
 
 .prim1:focus {

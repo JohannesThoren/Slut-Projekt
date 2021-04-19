@@ -22,8 +22,12 @@
  */
 const md5 = require("md5");
 module.exports = (app, blogPost, project, contact) => {
+
+  
+
   app.post("/blog/:token", (req, res) => {
     if (req.params.token == md5(process.env.ADMIN_TOKEN)) {
+ 
       blogPost.create({
         date: Date.now(),
         title: req.body.title,

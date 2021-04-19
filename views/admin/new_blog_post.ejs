@@ -11,7 +11,7 @@
   <body>
     <h1>New Post</h1>
 
-    <form id="content" method="POST" action="/blog/<%= token %> ">
+    <form id="content" method="POST" action="/blog/<%= token %>">
       <input type="text" placeholder="Title" name="title" /><br />
       <textarea
         type="text"
@@ -26,7 +26,7 @@
         id="mainText"
         name="markdown"
         cols="80"
-        rows="20"
+        rows="30"
         placeholder="Markdown..."
       ></textarea
       ><br />

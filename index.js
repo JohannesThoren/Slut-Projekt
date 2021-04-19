@@ -25,6 +25,7 @@ const exp = require('express')
 const mo = require('method-override')   
 const app = exp();
 const marked = require('marked')
+var multer = require('multer');
 
 require('dotenv').config()
 

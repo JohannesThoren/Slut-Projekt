@@ -19,6 +19,9 @@ Portfolio delen kommer att bestå av en ganska enkel layout, varje projekt komme
 
 jag har dock valt att istället för att ha 3 st kort på varje rad så kommer det att bli 2. Det ser helt enkelt bättre ut. men funderar just nu på om jag ska bara ha ett kort per rad (så som på blogg sidan)
 
+Dokumentationen för varje projekt ska också följa mitt color scheme. samt ha en lite annorlunda header. det kommer att bla finnas
+- en 
+
 ## Bloggen
 Blogg delen är nu helt fungerande jag kan både redigera inlägg, göra ny och ta bort dem. har även lagt till så att det senaste inlägget hamnar på första sidan.
 

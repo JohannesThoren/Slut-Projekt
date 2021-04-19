@@ -1,0 +1,89 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"
+    defer></script>
+
+  <link rel="stylesheet" href="/style/style.css" />
+  <link rel="stylesheet" href="/style/colors.css" />
+</head>
+
+<body class="bg1">
+  <header id="header">
+    <nav class="navbar navbar-expand-lg navbar-dark prim1">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Thorén</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- The nav bar is created as following -->
+        <!-- FUCKING REMEMBER THIS JOHANNES -->
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/About">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/blog">Blog</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Portfolio
+              </a>
+              <ul class="dropdown-menu bg2" aria-labelledby="navbarDropdownMenuLink">
+                <li>
+                  <a class="dropdown-item fg1" href="/portfolio">Overview</a>
+                </li>
+                <li>
+                  <a class="dropdown-item fg1" href="/portfolio/rust">Rust</a>
+                </li>
+                <li>
+                  <a class="dropdown-item fg1" href="/portfolio/python">Python</a>
+                </li>
+                <li>
+                  <a class="dropdown-item fg1" href="/portfolio/nodejs">NodeJS</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+  <!-- TODO add more text to the about page  -->
+  <div id="content" class="bg2 fg1">
+    <h1>About Me</h1>
+    <div id="content">
+      <p>
+        My name is Johannes Thorén, im a student at NTI Karlstad and a guy who
+        likes computer stuff and programming. I have coded since i was 13 when we had a small programming course in
+        school. 
+      </p>
+      <p>
+        Well what languages do i know then. Well I have dabbeld with c++, java
+        but that was a long time ago, now I mainly program in rust, python and nodejs. If you want to check out some of
+        my work go and look in my <a href="/portfolio">portfolio</a>.
+      </p>
+
+      <div>
+      </div>
+</body>
+
+</html>

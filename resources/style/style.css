@@ -36,7 +36,9 @@ header {
 }
 
 .card {
-    min-height: 200px
+    min-height: 200px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 #content {
@@ -74,6 +76,9 @@ h2 {
     #content {
         width: 90%;
         margin-top: 0.625rem;
+    }
+    .nav-link {
+        font-size: 1.6em;
     }
     img {
         max-width: 25rem

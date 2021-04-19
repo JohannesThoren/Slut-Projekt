@@ -23,57 +23,68 @@
 
 #content {
     width: 50%;
-    margin-top: 20px;
+    font-size: 1.2em; 
 }
 
-#header {
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 1.5em;
-    padding-bottom: 10px;
-    border-bottom: solid 1px black;
-}
-
-pre {
+#content pre {
     border-left: 10px solid lightgray;
     background-color: rgb(255, 255, 255);
     padding: 10px;
     background-color: #eee;
 }
 
-code {
+#content code {
     background-color: #eee;
     border-radius: 3px;
     font-family: courier, monospace;
     padding: 1px;
 }
 
-blockquote {
-    border-left: 2px solid lightgray;
-    padding-right: 5px;
+#content blockquote {
+    border-left: 4px solid lightgray;
+    padding-left: 5px;
 }
 
-table {
+#content table {
     /* margin-right: auto; */
     /* margin-left: auto; */
     border: 0.0625rem solid;
     border-collapse: collapse;
 }
 
-table,
+#content table,
 td,
 th {
     border: 0.0625rem solid lightgray;
     padding: 0.3125rem;
 }
 
-img {
+
+
+
+#content ul {
+    padding: 0;
+    margin: 10px;
+}
+
+#content li {
+    text-decoration: none;
+    text-align: left;
+    margin: 5px;
+}
+
+#content img {
     max-width: 100%;
 }
+@media screen and (max-width: 1000px) {
+    #content {width: 70%;}
+    /* #header  {width: 70%} */
+
+}
+
 
 @media screen and (max-width: 800px) {
     #content {width: 90%;}
-
+    /* #header  {width: 90%} */
 
 }
