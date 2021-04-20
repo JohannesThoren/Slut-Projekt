@@ -44,11 +44,11 @@ module.exports = (app, blogPost, project) => {
       })
    })
 
-   app.get('/blog/:id', (req, res) => {
+   app.get('/blog/post/:id', (req, res) => {
       blogPost.findById(req.params.id, async (err, post) => {
          let md = await marked(post.markdown).toString()
 
-         res.render('post', { markdown: md })
+         res.render('post', { markdown: md, post: post})
       })
    })
 

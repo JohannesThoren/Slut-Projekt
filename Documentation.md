@@ -3,6 +3,7 @@
   - [Portfolio](#portfolio)
   - [Bloggen](#bloggen)
   - [Hur ser tidsplanen ut?](#hur-ser-tidsplanen-ut)
+  - [color scheme](#color-scheme)
 
 # Slut Projektet, weuweb och wesweb
 Detta är dokumentationen för slut projektet i weuweb och wesweb, jag vill påstå att det har gått ganska bra och att jag har följt tidsplanen ganska noga. vissa saker har gått snabbare än förväntat vilket ger mig tid att jobba på annat eller förbättra.
@@ -19,11 +20,25 @@ Portfolio delen kommer att bestå av en ganska enkel layout, varje projekt komme
 
 jag har dock valt att istället för att ha 3 st kort på varje rad så kommer det att bli 2. Det ser helt enkelt bättre ut. men funderar just nu på om jag ska bara ha ett kort per rad (så som på blogg sidan)
 
-Dokumentationen för varje projekt ska också följa mitt color scheme. samt ha en lite annorlunda header. det kommer att bla finnas
-- en 
+Dokumentationen för varje projekt ska också följa mitt color scheme. samt ha en lite annorlunda header. i projekt headern kommer det att bla finnas
+- title
+- back knapp
+- git knapp
+- möjligt vis en kanpp för demo (om jag har tid)
 
 ## Bloggen
 Blogg delen är nu helt fungerande jag kan både redigera inlägg, göra ny och ta bort dem. har även lagt till så att det senaste inlägget hamnar på första sidan.
 
 ## Hur ser tidsplanen ut?
 tidsplanen ser ganska bra ut, blogg delen blev klar mycket snabbare än förväntat och efter som att blogg delen och portfolio delen kommer fungera väldigt lika så kommer det att gå undan att göra portfolio delen. 
+
+
+## color scheme
+färg schemat jag har valt är följande:
+    --bg1: #3D4739;
+    --bg2: #6F766B;
+    --bg3: white;
+    --prim1: #55292F;
+    --prim2: #5F2F37;
+    --fg1: #DDD8D8;
+    --fg2: black;

@@ -24,6 +24,7 @@
 #content {
     width: 50%;
     font-size: 1.2em; 
+    font-family: Cambria, Times, serif;
 }
 
 #content pre {
@@ -38,6 +39,7 @@
     border-radius: 3px;
     font-family: courier, monospace;
     padding: 1px;
+    color: #505050;
 }
 
 #content blockquote {
@@ -58,9 +60,6 @@ th {
     border: 0.0625rem solid lightgray;
     padding: 0.3125rem;
 }
-
-
-
 
 #content ul {
     padding: 0;

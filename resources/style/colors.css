@@ -20,7 +20,7 @@
  *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *   SOFTWARE.
  */
- :root {
+ /* :root {
     --bg1: #405240;
     --bg2: #738573;
     --bg3: white;
@@ -28,8 +28,17 @@
     --prim2: #741e33;
     --fg1: white;
     --fg2: black;
+ } */
+ :root {
+    --bg1: #3D4739;
+    --bg2: #6F766B;
+    --bg3: white;
+    --prim1: #55292F;
+    --prim2: #5F2F37;
+    --fg1: #DDD8D8;
+    --fg2: black;
  }
-
+ 
 
 .bg1 {
     background-color: var(--bg1)
