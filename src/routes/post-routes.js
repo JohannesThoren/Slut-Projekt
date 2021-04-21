@@ -21,13 +21,25 @@
  *   SOFTWARE.
  */
 const md5 = require("md5");
-module.exports = (app, blogPost, project, contact) => {
-
+module.exports = (app, blogPost, project, contact, multer) => {
   
 
-  app.post("/blog/:token", (req, res) => {
+  var storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+      cb(null, "./uploads/imgs");
+    },
+    filename: (req, file, cb) => {
+      cb(null, file.originalname);
+    },
+  });
+
+  var upload = multer({ storage: storage });
+
+  app.post("/blog/:token", upload.array("images", 10), (req, res) => {
     if (req.params.token == md5(process.env.ADMIN_TOKEN)) {
- 
+      console.log(req.files);
+      console.log(req.body);
+
       blogPost.create({
         date: Date.now(),
         title: req.body.title,
@@ -39,7 +51,7 @@ module.exports = (app, blogPost, project, contact) => {
     } else res.redirect("/");
   });
 
-  app.post("/portfolio/:token", (req, res) => {
+  app.post("/portfolio/:token", upload.array("images", 10), (req, res) => {
     if (req.params.token == md5(process.env.ADMIN_TOKEN)) {
       let tags = req.body.tags.split(",");
       console.log(tags);
@@ -53,18 +65,18 @@ module.exports = (app, blogPost, project, contact) => {
         date: Date.now(),
       });
 
-      res.redirect("/portfolio");
+      res.redirect("/admin/" + req.params.token);
     }
   });
 
   app.post("/contact", (req, res) => {
     contact.create({
-        subject: req.body.subject,
-        message: req.body.message,
-        name: req.body.name,
-        email: req.body.email,
-        date: Date.now()
-    })
-    res.redirect("/contact")
+      subject: req.body.subject,
+      message: req.body.message,
+      name: req.body.name,
+      email: req.body.email,
+      date: Date.now(),
+    });
+    res.redirect("/contact");
   });
 };

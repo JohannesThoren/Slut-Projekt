@@ -21,46 +21,28 @@
  *   SOFTWARE.
  */
 
-const exp = require('express')
-const mo = require('method-override')   
+const exp = require("express");
+const mo = require("method-override");
 const app = exp();
-const marked = require('marked')
-var multer = require('multer');
-
-require('dotenv').config()
-
-const {blogPost, project, contact} = require('./src/database/database');
- 
-app.set('view engine', 'ejs')
-app.use(exp.urlencoded({extended: true}))
-app.use(exp.static("resources"))
-app.use(mo('_method'))
+const marked = require("marked");
+const multer = require("multer");
 
 
+require("dotenv").config();
 
-// blogPost.create({
-//     date: Date.now(),
-//     title: "Test",
-//     markdown: "# hejsan",
-//     description: "ett test"
-// })
+const { blogPost, project, contact } = require("./src/database/database");
 
-// project.create({
-//     tags: ["html", "css", "js"],
-//     projectName: "test project",
-//     description: "this is a small test",
-//     markdown: "# hej",
-//     git: "none",
-//     updated: Date.now()
-// })
+app.set("view engine", "ejs");
+app.use(exp.urlencoded({ extended: true }));
+app.use(exp.static("resources"));
+app.use(mo("_method"));
 
-require('./src/routes/routes.js')(app, blogPost, project, contact, mo)
+require("./src/routes/routes.js")(app, blogPost, project, contact, mo, multer);
 
 app.listen(process.env.WEBPORT, (err) => {
-    if (!err) {
-        console.log(`serving on port ${process.env.WEBPORT}`)
-    }
-    else {
-        console.log(err)
-    }
-})
+  if (!err) {
+    console.log(`serving on port ${process.env.WEBPORT}`);
+  } else {
+    console.log(err);
+  }
+});

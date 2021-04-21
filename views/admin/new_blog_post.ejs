@@ -11,8 +11,11 @@
   <body>
     <h1>New Post</h1>
 
-    <form id="content" method="POST" action="/blog/<%= token %>">
-      <input type="text" placeholder="Title" name="title" /><br />
+    <form id="content" enctype="multipart/form-data" method="POST" action="/blog/<%= token %>">
+      
+      <input type="text" placeholder="Title" name="title" />
+      <label for="images">images to upload</label>
+      <input type="file" multiple name="images" id="images">
       <textarea
         type="text"
         cols="80"

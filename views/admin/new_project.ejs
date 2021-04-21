@@ -12,6 +12,8 @@
     <h1>New Project</h1>
     <form id="content" method="POST" action="/portfolio/<%= token %> ">
       <input placeholder="ProjectName" type="text" name="projectName" />
+      <label for="images">images to upload</label>
+      <input type="file" multiple name="images" id="images">
       <textarea
         placeholder="description"
         name="description"
@@ -26,7 +28,7 @@
         name="readme"
         id=""
         cols="30"
-        rows="30"
+        rows="25"
       ></textarea>
       <input
         placeholder="tags, separate with comma. ex: js,css"
