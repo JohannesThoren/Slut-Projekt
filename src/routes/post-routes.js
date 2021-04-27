@@ -22,11 +22,9 @@
  */
 const md5 = require("md5");
 module.exports = (app, blogPost, project, contact, multer) => {
-  
-
   var storage = multer.diskStorage({
     destination: (req, file, cb) => {
-      cb(null, "./uploads/imgs");
+      cb(null, "./resources/uploads/imgs");
     },
     filename: (req, file, cb) => {
       cb(null, file.originalname);
@@ -63,6 +61,7 @@ module.exports = (app, blogPost, project, contact, multer) => {
         markdown: req.body.markdown,
         git: req.body.git,
         date: Date.now(),
+        demo: req.body.demo,
       });
 
       res.redirect("/admin/" + req.params.token);

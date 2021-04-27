@@ -1,20 +1,23 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
 
-    <link rel="stylesheet" href="/style/admin.css">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="/style/admin.css">
 </head>
+
 <body>
-    <div id="flex">
-        <div class="panel">
-        <h1>Messages</h1>
-        <div class="scroll-panel"> 
-          <% for (let contact=contacts.length - 1; contact >= 0; contact--) { %>
+  <div id="flex">
+    <div class="panel">
+      <h1>Messages</h1>
+      <div class="scroll-panel">
+        <% for (let contact=contacts.length - 1; contact>= 0; contact--) { %>
           <div class="card">
-            <h2>Subject: <%= contacts[contact].subject %></h2>
+            <h2>Subject: <%= contacts[contact].subject %>
+            </h2>
             <h3>Message</h3>
             <pre>
               <div class="scroll-panel">
@@ -22,13 +25,17 @@
               </div>
             
             </pre>
-            
-            <h4>Name: <%= contacts[contact].name %> </h6>
-            <h4>Email: <%= contacts[contact].email %> </h6>
-            <h4>Sent: <%= contacts[contact].date %></h6>
+
+            <h4>Name: <%= contacts[contact].name %>
+                </h6>
+                <h4>Email: <%= contacts[contact].email %>
+                    </h6>
+                    <h4>Sent: <%= contacts[contact].date %>
+                        </h6>
           </div>
           <% } %>
-        </div>
       </div>
+    </div>
 </body>
+
 </html>

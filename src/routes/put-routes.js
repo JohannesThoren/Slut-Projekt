@@ -20,41 +20,35 @@
  *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *   SOFTWARE.
  */
-const md5 = require('md5');
+const md5 = require("md5");
 
 module.exports = (app, blogPost, project) => {
+  app.put("/blog/:token/:id", async (req, res) => {
+    if (req.params.token == md5(process.env.ADMIN_TOKEN)) {
+      await blogPost.findByIdAndUpdate(req.params.id, {
+        date: Date.now(),
+        title: req.body.title,
+        markdown: req.body.markdown,
+        description: req.body.description,
+      });
 
-    app.put('/blog/:token/:id', async (req, res) => {
-        if (req.params.token == md5(process.env.ADMIN_TOKEN)) {
-            await blogPost.findByIdAndUpdate(req.params.id, {
-                date: Date.now(),
-                title: req.body.title,
-                markdown: req.body.markdown,
-                description: req.body.description
-            })
+      res.redirect("/admin/" + req.params.token);
+    } else res.redirect("/");
+  });
 
-            res.redirect('/admin/' + req.params.token)
-        }
-        else
-            res.redirect('/')
-    })
+  app.put("/portfolio/:token/:id", async (req, res) => {
+    if (req.params.token == md5(process.env.ADMIN_TOKEN)) {
+      let tags = req.body.tags.split(",");
+      await project.findByIdAndUpdate(req.params.id, {
+        tags: tags,
+        projectName: req.body.projectName,
+        description: req.body.description,
+        markdown: req.body.markdown,
+        git: req.body.git,
+        updated: Date.now(),
+      });
 
-    app.put('/portfolio/:token/:id', async (req, res) => {
-        if (req.params.token == md5(process.env.ADMIN_TOKEN)) {
-            let tags = req.body.tags.split(',')
-            await project.findByIdAndUpdate(req.params.id, {
-                tags: tags,
-                projectName: req.body.projectName,
-                description: req.body.description,
-                markdown: req.body.markdown,
-                git: req.body.git,
-                updated: Date.now()
-            })
-
-            res.redirect('/admin/'+ req.params.token)
-        }
-        else 
-            res.redirect('/')
-    })
-
-}
+      res.redirect("/admin/" + req.params.token);
+    } else res.redirect("/");
+  });
+};

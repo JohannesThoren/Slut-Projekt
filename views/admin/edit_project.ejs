@@ -1,61 +1,31 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
 
-    <link rel="stylesheet" href="/style/style.css" />
-    <link rel="stylesheet" href="/style/editor.css" />
-  </head>
-  <body>
-    <h1>Edit Project</h1>
-    <form
-      id="content"
-      method="POST"
-      action="/portfolio/<%= token %>/<%= project._id %>/?_method=PUT"
-    >
-      <input
-        placeholder="ProjectName"
-        type="text"
-        name="projectName"
-        value="<%= project.projectName %> "
-      />
-      <textarea
-        placeholder="description"
-        name="description"
-        id=""
-        cols="30"
-        rows="5"
-      >
-<%= project.description %> </textarea
-      >
-      <!-- <label for="markdown_file">ethier upload a .md or write some markdown down below</label>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <link rel="stylesheet" href="/style/style.css" />
+  <link rel="stylesheet" href="/style/editor.css" />
+</head>
+
+<body>
+  <h1>Edit Project</h1>
+  <form id="content" method="POST" action="/portfolio/<%= token %>/<%= project._id %>/?_method=PUT">
+    <input placeholder="ProjectName" type="text" name="projectName" value="<%= project.projectName %> " />
+    <textarea placeholder="description" name="description" id="" cols="30" rows="5">
+<%= project.description %> </textarea>
+    <!-- <label for="markdown_file">ethier upload a .md or write some markdown down below</label>
         <input type="file" name="markdown" id="" placeholder="readme file"> -->
-      <textarea
-        placeholder="markdown"
-        name="markdown"
-        id=""
-        cols="30"
-        rows="30"
-      >
-<%= project.markdown %> </textarea
-      >
-      <input
-        placeholder="tags, separate with comma. ex: js,css"
-        type="text"
-        name="tags"
-        id=""
-        value="<%= project.tags %> "
-      />
-      <input
-        placeholder="git repo"
-        type="text"
-        name="git"
-        id=""
-        value="<%= project.git %> "
-      />
-      <input type="submit" value="Done" />
-    </form>
-  </body>
+    <textarea placeholder="markdown" name="markdown" id="" cols="30" rows="30">
+<%= project.markdown %> </textarea>
+    <input placeholder="tags, separate with comma. ex: js,css" type="text" name="tags" id=""
+      value="<%= project.tags %> " />
+    <input placeholder="git repo" type="text" name="git" id="" value="<%= project.git %> " />
+    <input placeholder="demo url" type="text" type="text" name="demo" value="<%= project.demo %> " />
+    <input type="submit" value="Done" />
+  </form>
+</body>
+
 </html>

@@ -39,6 +39,21 @@ h1 {
     text-align: center
 }
 
+img {
+    max-width: 500px;
+}
+
+.round {
+    border-radius: 100%;
+    border: 4px solid
+}
+
+#img {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
 .card {
     min-height: 200px;
     margin-top: 5px;

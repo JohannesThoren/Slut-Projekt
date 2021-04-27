@@ -27,7 +27,6 @@ const app = exp();
 const marked = require("marked");
 const multer = require("multer");
 
-
 require("dotenv").config();
 
 const { blogPost, project, contact } = require("./src/database/database");

@@ -27,6 +27,14 @@
     font-family: Cambria, Times, serif;
 }
 
+#content img {
+    max-width: 300px;
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #content pre {
     border-left: 10px solid lightgray;
     background-color: rgb(255, 255, 255);

@@ -20,40 +20,41 @@
  *   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *   SOFTWARE.
  */
-const mon = require('mongoose')
+const mon = require("mongoose");
 
-mon.connect(process.env.DBADDRESS, {useNewUrlParser: true, useUnifiedTopology: true })
-
+mon.connect(process.env.DBADDRESS, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 const BlogPost = new mon.Schema({
-    date: Date,
-    title: String,
-    markdown: String,
-    description: String
-})
+  date: Date,
+  title: String,
+  markdown: String,
+  description: String,
+});
 
 const Project = new mon.Schema({
-    tags: [String],
-    projectName: String,
-    description: String,
-    markdown: String,
-    git: String,
-    updated: Date
+  tags: [String],
+  projectName: String,
+  description: String,
+  markdown: String,
+  git: String,
+  updated: Date,
+  demo: String,
 });
 
 const Contact = new mon.Schema({
-    subject: String,
-    message: String,
-    name: String,
-    email: String,
-    date: Date
-
-})
+  subject: String,
+  message: String,
+  name: String,
+  email: String,
+  date: Date,
+});
 
 // this exports the mongod models
-const blogPost = mon.model("blogPost", BlogPost)
-const project = mon.model("project", Project)
-const contact = mon.model("contact", Contact)
+const blogPost = mon.model("blogPost", BlogPost);
+const project = mon.model("project", Project);
+const contact = mon.model("contact", Contact);
 
-module.exports = {blogPost, project, contact}
-
+module.exports = { blogPost, project, contact };

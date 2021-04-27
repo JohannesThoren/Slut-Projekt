@@ -33,17 +33,18 @@
     padding: 10px;
     border: 1px solid black;
     text-align: center;
+
 }
 
 .scroll-panel {
     width: 100%;
     overflow-y: scroll;
-    max-height: 500px;
+    max-height: 80%;
 }
     
 
 .card {
-    max-height: 800px;
+    max-height: 500px;
     padding: 10px;
     margin: 10px;
     border: 1px solid black;
